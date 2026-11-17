@@ -1,65 +1,117 @@
-# SKKP Professional — landing page na GitHub Pages
+<div align="center">
 
-Gotowa, responsywna witryna informacyjna przygotowana dla adresu **https://ciastoman.github.io/**.
+# 🚒 SKKP Professional
 
-## Publikacja (bez kompilacji)
+### Ty podejmujesz decyzje. Zastępy jadą do akcji.
 
-1. Wejdź do repozytorium: https://github.com/ciastoman/ciastoman.github.io
-2. Wybierz **Add file → Upload files**. Prześlij **zawartość** tego folderu (czyli `index.html`, folder `assets/`, `.nojekyll`, itd.). `index.html` musi znaleźć się w **głównym katalogu repozytorium**, a nie w dodatkowym folderze.
-3. Uwaga: repozytorium miało wcześniej `README.md` oraz `_config.yml` z domyślnym motywem GitHub Pages. Można nadpisać README tym plikiem, a `_config.yml` usunąć. `.nojekyll` pozwala publikować stronę bez Jekylla.
-4. Zatwierdź zmiany przyciskiem **Commit changes**.
-5. W **Settings → Pages** ustaw **Build and deployment → Deploy from a branch → main → /(root)** (jeśli już tak jest, nic nie zmieniaj).
-6. Otwórz https://ciastoman.github.io/ (publikacja może chwilę potrwać).
+**Symulator Stanowiska Kierowania Komendanta Powiatowego PSP**  
+Zarządzaj zdarzeniami, dysponuj siły i środki, koordynuj działania ratownicze i sprawdź, czy zachowasz zimną krew, gdy na stanowisku zrobi się naprawdę gorąco.
 
-Możesz też sklonować repozytorium lokalnie i skopiować pliki do jego korzenia.
+![Status](https://img.shields.io/badge/status-w%20rozwoju-f97316?style=flat-square)
+![Platforma](https://img.shields.io/badge/platforma-Windows-263746?style=flat-square)
+![Język](https://img.shields.io/badge/j%C4%99zyk-polski-263746?style=flat-square)
+![Linia rozwojowa](https://img.shields.io/badge/wersja-0.6.x-263746?style=flat-square)
 
-## Gdzie zmieniać tekst i dane?
+**[🌐 Oficjalna strona](https://ciastoman.github.io/)** · **[📦 Informacje o pobieraniu](https://ciastoman.github.io/#pobierz)** · **[🧭 Kierunek rozwoju](#-co-dalej)**
 
-- `index.html` — wszystkie nagłówki, opisy mechanik, FAQ i roadmapa.
-- `assets/config.js` — numer wersji, status rozwoju, link do pobrania, link do GitHub.
-- `assets/styles.css` — wygląd i kolory.
-- `assets/app.js` — menu mobilne, przełączanie zakładek, automatyczna aktualizacja danych na stronie.
-- `assets/favicon.svg` — ikonka strony.
-- `assets/og-cover.png` — obraz przy udostępnianiu linku w mediach społecznościowych.
+</div>
 
-## Jak uruchomić pobieranie gry?
+---
 
-Edytuj `assets/config.js`, np.:
+## 🎮 O co chodzi w tej grze?
 
-```js
-window.SKKP_CONFIG = {
-  version: '0.6.3',
-  releaseStatus: 'Dostępna',
-  downloadUrl: 'https://github.com/TWOJA-NAZWA/TWOJE-REPO/releases/latest',
-  githubUrl: 'https://github.com/ciastoman'
-};
-```
+W większości gier strażackich wskakujesz do wozu i ruszasz na sygnale. W **SKKP Professional** zostajesz po drugiej stronie radiostacji.
 
-Użyj **prawdziwego**, publicznego linku do release'u gry. Nie wpisuj linku do repozytorium strony, jeśli nie ma tam wydań programu. Przy pustym `downloadUrl` witryna celowo pokazuje nieaktywny przycisk „Pobieranie wkrótce” — niczego nie obiecuje i nie prowadzi do błędnego pobierania.
+Wcielasz się w dyżurnego stanowiska kierowania. Odbierasz **elektroniczne karty zgłoszeń z CPR**, analizujesz sytuację, dobierasz odpowiednie zastępy i wysyłasz je na miejsce. Potem nadzorujesz przebieg akcji, przyjmujesz meldunki, reagujesz na rozwój zdarzenia i organizujesz wsparcie, gdy dostępne siły przestają wystarczać.
 
-## Co z galerią?
+Akcja osadzona jest w **powiecie chrzanowskim**, z prawdziwymi miejscowościami, siecią dróg i odwzorowaniem lokalnych jednostek ratowniczo-gaśniczych oraz ochotniczych straży pożarnych.
 
-Obecne widoki w hero i sekcji „Podgląd” są **poglądowymi makietami HTML/CSS**, a nie screenshotami z prawdziwej gry. Strona wyraźnie to zaznacza. Kiedy będziesz mieć zrzuty ekranu z gry, można je wstawić w sekcji `#podglad` zamiast makiet.
+> **Twoje zadanie nie kończy się na kliknięciu „Dysponuj”.** Pożar się rozwija, woda się kończy, załogi są zajęte, a kolejne zgłoszenie może nadejść w najmniej dogodnym momencie.
 
-Przykładowo, obrazy umieszczaj w `assets/screenshots/` i odwołuj się do nich relatywnie (`assets/screenshots/mapa.webp`), żeby działały na GitHub Pages.
+## ⚙️ Co znajdziesz w SKKP Professional?
 
-## Test lokalny
+| System | Co wnosi do rozgrywki? |
+| --- | --- |
+| **🚨 Zgłoszenia CPR** | Elektroniczne karty zdarzeń i zróżnicowane scenariusze, od miejscowych zagrożeń po wymagające pożary i działania specjalistyczne. |
+| **🚒 Dysponowanie zastępów** | Dobór pojazdów, obsad i jednostek do rodzaju zagrożenia oraz dostępnych sił. |
+| **🗺️ Mapa operacyjna** | Działania w realiach powiatu chrzanowskiego, z wykorzystaniem danych mapowych OpenStreetMap. |
+| **👨‍🚒 Ludzie i służba** | Obsady PSP w systemie zmianowym i zróżnicowana dostępność druhów OSP zależnie od pory dnia. |
+| **📻 Łączność** | Meldunki radiowe, sygnały dźwiękowe i służbowy telefon do kontaktów operacyjnych. |
+| **🧯 KDR i działania** | Zadania realizowane przez zastępy, postęp akcji, potrzeby sprzętowe i bilans skuteczności działań. |
+| **💧 Zaopatrzenie wodne** | Zbiorniki pojazdów, środki gaśnicze, hydranty, naturalne źródła wody i ograniczenia wydajności układu. |
+| **🤝 Współdziałanie służb** | Powiadamianie i koordynacja z innymi służbami oraz organizowanie wsparcia spoza powiatu. |
+| **⏱️ Zarządzanie czasem** | Symulacja czasu operacyjnego i jego przyspieszanie podczas służby. |
 
-Otwórz `index.html` w przeglądarce. Do pełnego sprawdzenia serwuj katalog lokalnie, np.:
+### 🚨 Nie każde zgłoszenie jest takie samo
 
-```bash
-python -m http.server 8000
-```
+Pożar mieszkania, zdarzenie drogowe, zagrożenie gazowe, awaria instalacji energetycznej czy zdarzenie nad wodą wymagają innego podejścia. Nie zawsze liczy się liczba zadysponowanych wozów — czasem ważniejszy jest **właściwy pojazd, odpowiedni sprzęt i współpraca służb**.
 
-Następnie otwórz http://localhost:8000/.
+### 🚒 Każdy zastęp ma znaczenie
 
-## Informacje techniczne
+Pojazdy różnią się przeznaczeniem, wyposażeniem oraz zapasem środków. Dostępność jednostek i strażaków wpływa na możliwości dysponowania. Wysłanie wszystkich sił do pierwszego zdarzenia może okazać się problemem, kiedy przyjdzie drugie zgłoszenie.
 
-- HTML + CSS + mały, własny JavaScript; bez frameworków, bundlerów i płatnych API.
-- Działa na telefonach, tabletach i komputerach.
-- Nawigacja klawiaturą, opisy dla czytników ekranu, obsługa `prefers-reduced-motion`.
-- Czcionki z Google Fonts (nieobowiązkowe; w razie braku połączenia używane są systemowe zamienniki).
-- Brak cookies, formularzy zbierających dane i zewnętrznych trackerów.
-- Mapa w makietach jest schematyczna — nie przedstawia dokładnej geografii ani faktycznych zdarzeń.
+### 💧 Woda nie bierze się znikąd
 
-**Licencje i prawa:** przed wstawieniem autentycznych zdjęć pojazdów, nagrań audio, znaków jednostek i screenshotów upewnij się, że masz odpowiednie prawa do publikacji.
+Zapas wody w samochodzie jest ograniczony. Możesz korzystać z zaopatrzenia wodnego, ale liczą się również źródła, dostępna wydajność i możliwości pomp. Dobre rozplanowanie działań potrafi zmienić przebieg całej akcji.
+
+### 📞 Telefon też potrafi zadzwonić w złym momencie
+
+Na stanowisku obsługujesz łączność radiową i telefon służbowy, a informacje o przebiegu działań napływają w trakcie zmiany. Współpraca z PSP, OSP i innymi służbami nie jest tylko ozdobnikiem interfejsu — wpływa na koordynację działań.
+
+## 🖥️ Galeria
+
+**Zrzuty ekranu z rzeczywistej rozgrywki pojawią się tutaj w jednej z kolejnych aktualizacji README.**
+
+Do tego czasu wygląd projektu możesz podejrzeć na [oficjalnej witrynie](https://ciastoman.github.io/). Udostępnione tam wizualizacje interfejsu są makietami poglądowymi, a nie screenshotami gotowej gry.
+
+## 🛠️ Stan projektu
+
+SKKP Professional to **niezależny projekt rozwijany etapami**, obecnie w linii **0.6.x**. Poszczególne mechaniki i interfejs są regularnie rozbudowywane oraz dopracowywane.
+
+- **Platforma:** Windows (aplikacja desktopowa)
+- **Język:** polski
+- **Charakter gry:** symulator dyżurnego SKKP z elementami zarządzania zasobami i koordynacji działań
+- **Obszar gry:** powiat chrzanowski
+- **Dostępność wydań:** sprawdzaj aktualny status na [stronie projektu](https://ciastoman.github.io/#pobierz)
+
+> **Ważne:** To symulator tworzony z myślą o realizmie i edukacyjnej wartości rozgrywki, a nie oficjalne oprogramowanie Państwowej Straży Pożarnej ani narzędzie do obsługi rzeczywistych zdarzeń. Nie zastępuje procedur i systemów używanych przez służby.
+
+## 🧭 Co dalej?
+
+W planach rozwoju znajdują się między innymi:
+
+- dalsze dopracowywanie interfejsu stanowiska kierowania i kart zdarzeń;
+- bardziej naturalne rozmowy telefoniczne, meldunki oraz reakcje jednostek;
+- pogłębianie współdziałania PSP, OSP i służb zewnętrznych;
+- rozszerzanie i balansowanie scenariuszy zdarzeń;
+- dalsza poprawa płynności symulacji i kompresji czasu;
+- rozwój realizmu organizacji służby i podejmowania decyzji.
+
+To **kierunki rozwoju**, nie deklaracja dostępności konkretnych funkcji ani terminów ich wydania.
+
+## 📦 Jak zagrać?
+
+Informacje o publicznych wydaniach i plikach do pobrania publikujemy na **[ciastoman.github.io](https://ciastoman.github.io/#pobierz)**.
+
+Jeśli przycisk pobierania jest nieaktywny, oznacza to, że publiczna paczka nie została jeszcze podpięta do witryny. Nie korzystaj z przypadkowych plików udostępnianych jako „oficjalne” wydania SKKP Professional.
+
+## 👋 Autorzy projektu
+
+**SKKP Professional** rozwijają:
+
+- **ciastoman** — pomysł, koordynacja rozwoju, testy i kierunek projektu;
+- **ChatGPT** — współtworzenie kodu, mechanik, dokumentacji i materiałów projektu.
+
+Szczegółowe informacje o źródłach wykorzystanych materiałów i podziękowaniach znajdują się w aplikacji.
+
+---
+
+<div align="center">
+
+### 🚨 Stanowisko gotowe. Zmiana rozpoczęta.
+
+**Teraz wszystko zależy od Twoich decyzji.**
+
+[**Odwiedź stronę SKKP Professional →**](https://ciastoman.github.io/)
+
+</div>
