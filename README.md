@@ -12,7 +12,7 @@ Zarządzaj zdarzeniami, dysponuj siły i środki, koordynuj działania ratownicz
 ![Język](https://img.shields.io/badge/j%C4%99zyk-polski-263746?style=flat-square)
 ![Linia rozwojowa](https://img.shields.io/badge/wersja-0.6.x-263746?style=flat-square)
 
-**[🌐 Oficjalna strona](https://ciastoman.github.io/)** · **[📦 Informacje o pobieraniu](https://ciastoman.github.io/#pobierz)** · **[🧭 Kierunek rozwoju](#-co-dalej)**
+**[🌐 Oficjalna strona](https://ciastoman.github.io/SKKP/)** · **[📦 Informacje o pobieraniu](https://ciastoman.github.io/SKKP/#pobierz)** · **[🧭 Kierunek rozwoju](#-co-dalej)**
 
 </div>
 
@@ -60,7 +60,7 @@ Na stanowisku obsługujesz łączność radiową i telefon służbowy, a informa
 
 ## 🖥️ Galeria
 
-Wygląd projektu możesz podejrzeć na [oficjalnej witrynie](https://ciastoman.github.io/). Udostępnione tam wizualizacje interfejsu są makietami poglądowymi, a nie screenshotami gotowej gry.
+Wygląd projektu możesz podejrzeć na [oficjalnej witrynie](https://ciastoman.github.io/SKKP/). Udostępnione tam wizualizacje interfejsu są makietami poglądowymi, a nie screenshotami gotowej gry.
 
 ## 🛠️ Stan projektu
 
@@ -70,7 +70,7 @@ SKKP Professional to **niezależny projekt rozwijany etapami**, obecnie w linii 
 - **Język:** polski
 - **Charakter gry:** symulator dyżurnego SKKP z elementami zarządzania zasobami i koordynacji działań
 - **Obszar gry:** powiat chrzanowski
-- **Dostępność wydań:** sprawdzaj aktualny status na [stronie projektu](https://ciastoman.github.io/#pobierz)
+- **Dostępność wydań:** sprawdzaj aktualny status na [stronie projektu](https://ciastoman.github.io/SKKP/#pobierz)
 
 > **Ważne:** To symulator, a nie oficjalne oprogramowanie Państwowej Straży Pożarnej ani narzędzie do obsługi rzeczywistych zdarzeń. Nie zastępuje procedur i systemów używanych przez służby.
 
@@ -89,7 +89,7 @@ To **kierunki rozwoju**, nie deklaracja dostępności konkretnych funkcji ani te
 
 ## 📦 Jak zagrać?
 
-Informacje o publicznych wydaniach i plikach do pobrania publikujemy na **[ciastoman.github.io](https://ciastoman.github.io/#pobierz)**.
+Informacje o publicznych wydaniach i plikach do pobrania publikujemy na **[ciastoman.github.io](https://ciastoman.github.io/SKKP/#pobierz)**.
 
 ## 👋 Autorzy projektu
 
@@ -118,6 +118,6 @@ Szczegółowe informacje o wykorzystanych materiałach znajdują się również 
 
 **Teraz wszystko zależy od Twoich decyzji.**
 
-[**Odwiedź stronę SKKP Professional →**](https://ciastoman.github.io/)
+[**Odwiedź stronę SKKP Professional →**](https://ciastoman.github.io/SKKP/)
 
 </div>
