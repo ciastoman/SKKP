@@ -20,7 +20,7 @@ Zarządzaj zdarzeniami, dysponuj siły i środki, koordynuj działania ratownicz
 
 ## 🎮 O co chodzi w tej grze?
 
-W większości gier strażackich wskakujesz do wozu i ruszasz na sygnale. W **SKKP Professional** zostajesz po drugiej stronie radiostacji.
+W większości gier strażackich skupia się na bezpośrednim udziale w akcji. W **SKKP Professional** zostajesz po drugiej stronie radiostacji.
 
 Wcielasz się w dyżurnego stanowiska kierowania. Odbierasz **elektroniczne karty zgłoszeń z CPR**, analizujesz sytuację, dobierasz odpowiednie zastępy i wysyłasz je na miejsce. Potem nadzorujesz przebieg akcji, przyjmujesz meldunki, reagujesz na rozwój zdarzenia i organizujesz wsparcie, gdy dostępne siły przestają wystarczać.
 
@@ -60,9 +60,7 @@ Na stanowisku obsługujesz łączność radiową i telefon służbowy, a informa
 
 ## 🖥️ Galeria
 
-**Zrzuty ekranu z rzeczywistej rozgrywki pojawią się tutaj w jednej z kolejnych aktualizacji README.**
-
-Do tego czasu wygląd projektu możesz podejrzeć na [oficjalnej witrynie](https://ciastoman.github.io/). Udostępnione tam wizualizacje interfejsu są makietami poglądowymi, a nie screenshotami gotowej gry.
+Wygląd projektu możesz podejrzeć na [oficjalnej witrynie](https://ciastoman.github.io/). Udostępnione tam wizualizacje interfejsu są makietami poglądowymi, a nie screenshotami gotowej gry.
 
 ## 🛠️ Stan projektu
 
@@ -74,7 +72,7 @@ SKKP Professional to **niezależny projekt rozwijany etapami**, obecnie w linii 
 - **Obszar gry:** powiat chrzanowski
 - **Dostępność wydań:** sprawdzaj aktualny status na [stronie projektu](https://ciastoman.github.io/#pobierz)
 
-> **Ważne:** To symulator tworzony z myślą o realizmie i edukacyjnej wartości rozgrywki, a nie oficjalne oprogramowanie Państwowej Straży Pożarnej ani narzędzie do obsługi rzeczywistych zdarzeń. Nie zastępuje procedur i systemów używanych przez służby.
+> **Ważne:** To symulator, a nie oficjalne oprogramowanie Państwowej Straży Pożarnej ani narzędzie do obsługi rzeczywistych zdarzeń. Nie zastępuje procedur i systemów używanych przez służby.
 
 ## 🧭 Co dalej?
 
@@ -93,8 +91,6 @@ To **kierunki rozwoju**, nie deklaracja dostępności konkretnych funkcji ani te
 
 Informacje o publicznych wydaniach i plikach do pobrania publikujemy na **[ciastoman.github.io](https://ciastoman.github.io/#pobierz)**.
 
-Jeśli przycisk pobierania jest nieaktywny, oznacza to, że publiczna paczka nie została jeszcze podpięta do witryny. Nie korzystaj z przypadkowych plików udostępnianych jako „oficjalne” wydania SKKP Professional.
-
 ## 👋 Autorzy projektu
 
 **SKKP Professional** rozwijają:
@@ -106,11 +102,11 @@ Jeśli przycisk pobierania jest nieaktywny, oznacza to, że publiczna paczka nie
 
 Zdjęcia pojazdów i jednostek wykorzystane w grze pochodzą z następujących źródeł:
 
-- **Profile jednostek OSP na Facebooku** — fotografie publikowane przez poszczególne jednostki;
+- **Profile jednostek OSP i PSP na Facebooku** — fotografie publikowane przez poszczególne jednostki;
 - **Czerwone Samochody** — zdjęcia pojazdów pożarniczych;
 - **Grzegorz Fortuna** — fotografie pojazdów strażackich.
 
-Dziękujemy autorom zdjęć i osobom dokumentującym działalność straży pożarnej. Prawa do fotografii pozostają przy ich właścicielach.
+Prawa do fotografii pozostają przy ich właścicielach.
 
 Szczegółowe informacje o wykorzystanych materiałach znajdują się również w aplikacji.
 
