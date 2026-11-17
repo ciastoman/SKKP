@@ -102,7 +102,17 @@ Jeśli przycisk pobierania jest nieaktywny, oznacza to, że publiczna paczka nie
 - **ciastoman** — pomysł, koordynacja rozwoju, testy i kierunek projektu;
 - **ChatGPT** — współtworzenie kodu, mechanik, dokumentacji i materiałów projektu.
 
-Szczegółowe informacje o źródłach wykorzystanych materiałów i podziękowaniach znajdują się w aplikacji.
+### 📸 Źródła zdjęć
+
+Zdjęcia pojazdów i jednostek wykorzystane w grze pochodzą z następujących źródeł:
+
+- **Profile jednostek OSP na Facebooku** — fotografie publikowane przez poszczególne jednostki;
+- **Czerwone Samochody** — zdjęcia pojazdów pożarniczych;
+- **Grzegorz Fortuna** — fotografie pojazdów strażackich.
+
+Dziękujemy autorom zdjęć i osobom dokumentującym działalność straży pożarnej. Prawa do fotografii pozostają przy ich właścicielach.
+
+Szczegółowe informacje o wykorzystanych materiałach znajdują się również w aplikacji.
 
 ---
 
