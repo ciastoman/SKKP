@@ -1,8 +1,6 @@
-# Ciekawostki z budowy strony 🚒
+# CIEKAWOSTKI — Witryna 0.2.0
 
-- Mapa w hero nie korzysta z żadnych płatnych API: to lekki, schematyczny SVG autorstwa strony.
-- Na stronie jest mały „symulator wyglądu” czterech obszarów: mapa, karta zdarzenia, woda, bilans.
-- Kolory i oznaczenia nawiązują do ekranów operacyjnych, ale makiety nie udają prawdziwych screenshotów.
-- Strona nie wymaga Reacta, Node.js, bazy danych ani serwera aplikacji.
-- Przy pustym adresie pobierania przycisk nie prowadzi w kosmos (ani do błędu 404), tylko uczciwie informuje o nadchodzącym wydaniu.
-- Wszystkie zakładki podglądu da się przełączać klawiszami strzałek.
+- Wszystkie pięć screenshotów pochodzi z autentycznego interfejsu SKKP Professional 0.6.3.5, nie z makiety.
+- Powiększenie działa bez zewnętrznych bibliotek — wykorzystuje natywny element HTML `<dialog>`.
+- Dla szybkiego przewijania miniatury są mniejsze niż pełne obrazy galerii, ale pełne obrazy zachowują pierwotną rozdzielczość.
+- Ścieżki względne w witrynie działają także w GitHub Pages pod adresem `/SKKP/`.

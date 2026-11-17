@@ -1,15 +1,11 @@
-# Roadmapa witryny SKKP Professional
+# ROADMAP — Oficjalna witryna SKKP Professional
 
-## Gotowe
-- Pierwszy landing page na GitHub Pages.
-- Opis mechanik gry, demo interfejsu, roadmapa, FAQ.
-- Ustawienia wydań w `assets/config.js`.
+## Zrealizowano (0.2.0)
+- Autentyczna galeria gry, pięć screenshotów, powiększanie, układ mobilny.
+- Poprawne adresy GitHub Pages pod `/SKKP/`.
 
-## Warto zrobić, gdy będziemy mieć materiały
-- Podmienić makiety na rzeczywiste screenshoty z aplikacji.
-- Dodać oficjalny link do pobierania pierwszej publicznej paczki.
-- Dodać historię wydań synchronizowaną z GitHub Releases (jeżeli pojawi się potrzeba).
-- Wprowadzić osobną galerię jednostek i pojazdów po potwierdzeniu praw do zdjęć.
-- Ewentualnie rozbudować sekcję aktualności o konkretny changelog kolejnych wydań.
-
-Brak sztywnych terminów: to propozycje rozwoju strony, nie deklaracje wydań gry.
+## Kolejne możliwości
+- Nowe screenshoty z kolejnych wydań SKKP Professional.
+- Sekcja changeloga wersji gry pobierana lub uzupełniana przy publikacji.
+- Link do publicznych wydań w `assets/config.js`, po uruchomieniu dystrybucji.
+- Opcjonalnie zwiastun i dodatkowe materiały z przebiegu służby.
