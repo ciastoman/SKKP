@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.5.0 „Żywe zdarzenia”**. Pełne źródła przygotowane; kompilacja i testy WPF na Windows do wykonania.  
+> Ostatnia pełna wersja źródeł: **0.6.5.1 „Polerka operacyjna”**. Pełna paczka źródłowa po testach statycznych; kompilacja i testy WPF na Windows pozostają do wykonania.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -32,7 +32,7 @@
 
 ## 3. Testy, przeglądy i czystość źródeł
 
-1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.5.0: `Tests/verify_0650.py`.
+1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.5.1: `Tests/verify_0651.py`.
 2. Nie przywracać historycznych testów 0.4.x–0.6.x, archiwalnego katalogu `Verification`, starych smoke testów i nieużywanych eksperymentów.
 3. Bieżący zestaw powinien sprawdzać: kluczowe funkcje nowej wersji, zasoby, dane floty, powiązania zdjęć, brak martwych odwołań, spójność wersji, zachowanie starszych zapisów i integralność ZIP.
 4. Test funkcjonalny WPF/.NET 10 na Windows ma być osobno oznaczony: **wykonany** lub **niewykonany**.
@@ -177,6 +177,18 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Flota nadal pochodzi z `fleet-catalog(8).json`: 29 remiz, 65 pojazdów, 63 zdjęcia; pozostają zasady 0.6.4.3, dotychczasowe premie, radio, telefon i logistyka.
 - Pełne źródła 0.6.5.0: 286 plików, jedyny bieżący skrypt `Tests/verify_0650.py`. Test statyczny po niezależnym rozpakowaniu ZIP: **118/118 PASS**. Kontrola CRC ZIP: poprawna.
 - **Nie potwierdzono kompilacji .NET 10/WPF ani uruchomienia GUI**: wymagany odbiór na Windows i test starszych `game.db`.
+### 0.6.5.1 — „Polerka operacyjna” (18.11.2026)
+
+- Radio po zakończeniu tankowania: bez nienaturalnej frazy „Pełna gotowość w modelu gry”; podawać zapasy i tylko rzeczywiście pozostałe ograniczenia.
+- Służby: status i historia kontaktu z Policją, ZRM, energetyką, gazownikami i PKP PLK znajdują się w tej samej grupie co odpowiednie zadanie operacyjne KDR (np. „Zabezpieczenie ruchu”). Inne wezwania zachowują własną jedną kartę. W GUI wszystkie wpisy historii są widoczne pod właściwą służbą.
+- Karta „Raport i sprzęt”: usunąć podpis „Dane pochodzą z symulacji…”, ale zachować ostrzeżenie o niepełnym raporcie.
+- Karta pojazdu: usunięta zakładka „Wyposażenie wg typu” i metoda jej widoku. **Nie usuwać `Core/EquipmentProposals.cs` ani zależności używanych w migracjach.** „Edytuj dane” pozostaje na końcu.
+- Motopompa: pokazywać wydajność w l/min, tak jak dla autopompy; przy nieznanej wartości używać „Brak danych”, a nie „na wyposażeniu”.
+- Zweryfikowano nieograniczone zapasy **wody, koncentratu pianotwórczego i proszku w remizach**; skończone pojemności i automatyczne uzupełnianie na pojazdach: 250 l/min, 50 l/min i 50 kg/min. Nie przenosić limitów dawnego `StationFoamReserves` do rzeczywistego tankowania.
+- Środki gaśnicze dobierane kontekstowo: bez uniwersalnej premii za pianę/proszek. Piana jest właściwa przy określonych pożarach cieczy, proszek szybko tłumi płomień, ale słabo chłodzi. Nie zmieniano obecnych mnożników silnika.
+- Zachowane `fleet-catalog(8).json`, 29 remiz, 65 wozów i 63 fotografie; komplet 108 plików Assets niezmieniony względem 0.6.5.0.
+- Pełny ZIP 0.6.5.1, 286 plików, wyłącznie `Tests/verify_0651.py`; **152/152 kontrole statyczne PASS po niezależnym rozpakowaniu ZIP**, poprawne CRC. Nie skompilowano ani nie uruchomiono Windows/.NET 10/WPF.
+
 ## 13. Kontrola końcowa każdego wydania
 
 - [ ] Nowy build oparty na najnowszym pełnym ZIP; brak regresji
