@@ -121,6 +121,7 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Repozytorium witryny: **https://github.com/ciastoman/SKKP**
 - Witryna i jej `README.md` są odrębnym obszarem: **nie nadpisywać ręcznie aktualizowanego README na GitHubie** starszą kopią ze źródeł gry.
 - Niniejszy `ZASADY-WYDAN.md` w repozytorium jest trwałym dokumentem referencyjnym dla kolejnych rozmów i buildów. Aktualizować go po zmianie ustaleń, a wersję z niego dołączać także do kolejnych pełnych źródeł.
+- **Zatwierdzony plan przyszłej 0.6.5.0 „Żywe zdarzenia”**: [PLAN-0.6.5.0-ZYWE-ZDARZENIA.md](./PLAN-0.6.5.0-ZYWE-ZDARZENIA.md). Plan obejmuje aktywne meldunki KDR, dynamiczne zdarzenia, aktualizacje CPR, zapotrzebowania, listę spraw i bilans; **nie został jeszcze wdrożony**. Obecna linia 0.6.4.x pozostaje etapem dopracowania istniejących systemów.
 
 ## 12. Wydanie 0.6.4.0 „Logistyka operacyjna” (pełne źródła przygotowane 18.11.2026; testy WPF na Windows wciąż do wykonania)
 
