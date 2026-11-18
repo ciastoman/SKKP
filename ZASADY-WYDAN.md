@@ -115,6 +115,13 @@ W oknie „O programie” utrzymywać:
 
 Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” w sekcji autorów.
 
+**Do wdrożenia przy następnym pełnym wydaniu — sekcja „O programie”:** dodać zwięzłą informację o znakach towarowych producentów pojazdów (np. MAN, Mercedes-Benz, Volvo, Scania, Jelcz). Proponowana treść:
+
+> **Znaki towarowe producentów pojazdów**  
+> Nazwy producentów, modele pojazdów oraz ich oznaczenia wykorzystano wyłącznie w celach informacyjnych i identyfikacyjnych. Wszystkie znaki towarowe należą do ich prawowitych właścicieli. SKKP Professional jest niezależnym, nieoficjalnym symulatorem i nie jest sponsorowany, zatwierdzony ani powiązany z producentami przedstawionych pojazdów.
+
+Dopisek nie zastępuje wymaganych praw do fotografii, logotypów ani nagrań. Zachować dotychczasowe autorstwo i wykaz źródeł zdjęć; **na razie to zadanie do następnego wydania, bez zmiany kodu w aktualnym buildzie**.
+
 ## 11. Witryna i repozytorium GitHub
 
 - Oficjalna strona: **https://ciastoman.github.io/SKKP/**
