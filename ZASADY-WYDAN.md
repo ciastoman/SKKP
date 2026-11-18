@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.5.1 „Polerka operacyjna”**. Pełna paczka źródłowa po testach statycznych; kompilacja i testy WPF na Windows pozostają do wykonania.  
+> Ostatnia pełna wersja źródeł: **0.6.5.2 „Radiowa dyscyplina”**. Pełne źródła i testy statyczne gotowe; kompilacja WPF na Windows nadal do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -32,7 +32,7 @@
 
 ## 3. Testy, przeglądy i czystość źródeł
 
-1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.5.1: `Tests/verify_0651.py`.
+1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.5.2: `Tests/verify_0652.py`.
 2. Nie przywracać historycznych testów 0.4.x–0.6.x, archiwalnego katalogu `Verification`, starych smoke testów i nieużywanych eksperymentów.
 3. Bieżący zestaw powinien sprawdzać: kluczowe funkcje nowej wersji, zasoby, dane floty, powiązania zdjęć, brak martwych odwołań, spójność wersji, zachowanie starszych zapisów i integralność ZIP.
 4. Test funkcjonalny WPF/.NET 10 na Windows ma być osobno oznaczony: **wykonany** lub **niewykonany**.
@@ -188,6 +188,18 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Środki gaśnicze dobierane kontekstowo: bez uniwersalnej premii za pianę/proszek. Piana jest właściwa przy określonych pożarach cieczy, proszek szybko tłumi płomień, ale słabo chłodzi. Nie zmieniano obecnych mnożników silnika.
 - Zachowane `fleet-catalog(8).json`, 29 remiz, 65 wozów i 63 fotografie; komplet 108 plików Assets niezmieniony względem 0.6.5.0.
 - Pełny ZIP 0.6.5.1, 286 plików, wyłącznie `Tests/verify_0651.py`; **152/152 kontrole statyczne PASS po niezależnym rozpakowaniu ZIP**, poprawne CRC. Nie skompilowano ani nie uruchomiono Windows/.NET 10/WPF.
+
+### 0.6.5.2 — „Radiowa dyscyplina” (18.11.2026)
+
+- Usunięto przedwczesne meldunki o nieskuteczności zastępu **w czasie rozpoznania i sprawiania**; komunikaty okresowe/na żądanie zgłaszają przygotowanie, a braki dopiero po upływie rzeczywistego czasu przygotowania.
+- Pierwszy zastęp na miejscu **nie mówi, że przejmuje dowodzenie** od nieistniejącego poprzednika; meldunek o przejęciu wyłącznie przy faktycznej zmianie KDR.
+- Uzupełnienia CPR są rzadsze: pierwsze 6–8 min, drugie 12–15 min po poprzednim; maks. dwa i tylko **jedno otwarte uzupełnienie** na zdarzenie.
+- Dyżurny przekazuje **jedną aktualizację do jednego adresata radiowego**: KDR na miejscu albo zastępu w dojeździe. Status przekazania i potwierdzenie odbioru w drodze zachowane w `game.db`, weryfikacja informacji dopiero podczas rozpoznania. Blokada następnej aktualizacji nie blokuje pozostałych zadań.
+- W służbowych dialogach telefonicznych SKKP mówi **SKKP Chrzanów**, nie „Stanowisko”. Również stare kwestie sanitowane przy wyświetlaniu, bez nadpisywania zapisów.
+- Usunięto **tylko górny przycisk „Wycofaj”** na karcie zdarzenia, pozostawiono wycofanie konkretnego wozu z listy i menu PPM.
+- Zachowane wszystkie 108 plików Assets, 29 remiz, 65 pojazdów i 63 fotografie; nadal `fleet-catalog(8).json`.
+- Pełny ZIP **286 plików**, jedyny `Tests/verify_0652.py`; **182/182 PASS** na kompletnym źródle i po niezależnym rozpakowaniu ZIP, CRC poprawne. **Bez kompilacji .NET 10/WPF**.
+- Remiza.pl podaje historyczny procent „Gotowość” dla OSP KSRG za 2025, ale **nie jest to bieżąca dostępność dzienna/nocna**. Danych tych nie przenoszono automatycznie do symulacji.
 
 ## 13. Kontrola końcowa każdego wydania
 
