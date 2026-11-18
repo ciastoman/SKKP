@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.4.3 „Logistyka pod kontrolą”**. Kompilacja i testy WPF na Windows do wykonania.  
+> Ostatnia pełna wersja źródeł: **0.6.5.0 „Żywe zdarzenia”**. Pełne źródła przygotowane; kompilacja i testy WPF na Windows do wykonania.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -32,7 +32,7 @@
 
 ## 3. Testy, przeglądy i czystość źródeł
 
-1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.4.3: `Tests/verify_0643.py`.
+1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.5.0: `Tests/verify_0650.py`.
 2. Nie przywracać historycznych testów 0.4.x–0.6.x, archiwalnego katalogu `Verification`, starych smoke testów i nieużywanych eksperymentów.
 3. Bieżący zestaw powinien sprawdzać: kluczowe funkcje nowej wersji, zasoby, dane floty, powiązania zdjęć, brak martwych odwołań, spójność wersji, zachowanie starszych zapisów i integralność ZIP.
 4. Test funkcjonalny WPF/.NET 10 na Windows ma być osobno oznaczony: **wykonany** lub **niewykonany**.
@@ -168,6 +168,15 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Pełna paczka źródłowa: tylko `Tests/verify_0643.py`, aktualny słowniczek oraz obowiązkowa dokumentacja. Kontrole statyczne po samodzielnym rozpakowaniu ZIP: 111/111 PASS. Kompilacja Windows/.NET 10/WPF niewykonana.
 - Plan wersji 0.6.5.0 „Żywe zdarzenia” pozostaje osobny i niewdrożony: [PLAN-0.6.5.0-ZYWE-ZDARZENIA.md](./PLAN-0.6.5.0-ZYWE-ZDARZENIA.md).
 
+### 0.6.5.0 — „Żywe zdarzenia” (18.11.2026; pełne źródła do odbioru)
+
+- Zrealizowano źródłowo plan z [PLAN-0.6.5.0-ZYWE-ZDARZENIA.md](./PLAN-0.6.5.0-ZYWE-ZDARZENIA.md): aktywne pytania SKKP do KDR, opóźnione odpowiedzi oparte na stanie symulacji, dodatkowe meldunki rozwoju zagrożenia i postępu.
+- Elektroniczne karty CPR otrzymują późniejsze **niepotwierdzone** informacje, które dyżurny przekazuje zastępom, a KDR potwierdza odbiór. Nie są to automatycznie potwierdzone fakty ze zdarzenia.
+- Nowa zakładka **„Łączność i decyzje”** w istniejącej karcie zdarzenia obejmuje zapytania, aktualizacje CPR, listę spraw obserwującą istniejące rejestry logistyki i służb oraz chronologię decyzji. Bez osobnego okna; wspólny ciemny GUI.
+- Nowe listy i znaczniki zapisywane przy `Incident` w `game.db`; historyczne aktywne zdarzenia bez sztucznego generowania dawnych zgłoszeń i rozmów.
+- Flota nadal pochodzi z `fleet-catalog(8).json`: 29 remiz, 65 pojazdów, 63 zdjęcia; pozostają zasady 0.6.4.3, dotychczasowe premie, radio, telefon i logistyka.
+- Pełne źródła 0.6.5.0: 286 plików, jedyny bieżący skrypt `Tests/verify_0650.py`. Test statyczny po niezależnym rozpakowaniu ZIP: **118/118 PASS**. Kontrola CRC ZIP: poprawna.
+- **Nie potwierdzono kompilacji .NET 10/WPF ani uruchomienia GUI**: wymagany odbiór na Windows i test starszych `game.db`.
 ## 13. Kontrola końcowa każdego wydania
 
 - [ ] Nowy build oparty na najnowszym pełnym ZIP; brak regresji
