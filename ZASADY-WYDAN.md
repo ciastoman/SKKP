@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.4.0 „Logistyka operacyjna”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
+> Ostatnia pełna wersja źródeł: **0.6.4.1 „Logistyka operacyjna — poprawka kompilacji”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -136,6 +136,13 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 8. Weryfikacja kompatybilności ze wspólną pulą PSP, magazynami, flotą, dotychczasowym KDR i starymi `game.db`.
 
 **Poza zakresem** na ten etap: gospodarka paliwowa, ograniczanie zapasów wody/środków gaśniczych w remizach, międzyregionalna zaawansowana logistyka.
+
+### 0.6.4.1 — poprawka po kompilacji na Windows (18.11.2026)
+
+- Usunięto trzy błędy `CS7036` w `Windows/IncidentLogisticsPanel0640.cs`: drugi parametr `Result(string? error, string success="")` stał się opcjonalny, dzięki czemu trzy wywołania z jednym argumentem są poprawne.
+- Pełna źródłowa paczka 0.6.4.1 oparta na 0.6.4.0; wszystkie 108 zasobów i 63 fotografie zachowane; aktualny test `Tests/verify_0641.py`, bez historycznego testu.
+- Przegląd słowniczka: doprecyzowanie hasła „Zapotrzebowanie logistyczne” o zakres 1–12 sztuk.
+- Testy statyczne 62/62 i test ZIP po samodzielnym rozpakowaniu zaliczone; **kompilacja .NET 10 / WPF nie została tu wykonana**.
 
 ## 13. Kontrola końcowa każdego wydania
 
