@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.4.2 „KDR zgłasza, SKKP dowozi”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
+> Ostatnia pełna wersja źródeł: **0.6.4.3 „Logistyka pod kontrolą”**. Kompilacja i testy WPF na Windows do wykonania.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -32,7 +32,7 @@
 
 ## 3. Testy, przeglądy i czystość źródeł
 
-1. **Tylko testy aktualnej wersji** — w 0.6.3.11 obowiązuje `Tests/verify_06311.py`; dla 0.6.4.0 należy utworzyć nowy `Tests/verify_0640.py`, zastępując stary.
+1. **Tylko testy aktualnej wersji** — w każdym pełnym wydaniu zastępować poprzedni skrypt nowym; dla 0.6.4.3: `Tests/verify_0643.py`.
 2. Nie przywracać historycznych testów 0.4.x–0.6.x, archiwalnego katalogu `Verification`, starych smoke testów i nieużywanych eksperymentów.
 3. Bieżący zestaw powinien sprawdzać: kluczowe funkcje nowej wersji, zasoby, dane floty, powiązania zdjęć, brak martwych odwołań, spójność wersji, zachowanie starszych zapisów i integralność ZIP.
 4. Test funkcjonalny WPF/.NET 10 na Windows ma być osobno oznaczony: **wykonany** lub **niewykonany**.
@@ -50,7 +50,7 @@
 ## 5. Katalog floty i fotografie
 
 - Stan odniesienia po 0.6.3.11: **29 remiz, 65 pojazdów, 63 zdjęcia**.
-- Najnowszy zaakceptowany katalog: `fleet-catalog(7).json`, rozszerzony w 0.6.3.9 o **6 przypisań zdjęć**; najnowsze zdjęcia: `VehiclePhotos(2).zip`.
+- Najnowszy zaakceptowany katalog: **`fleet-catalog(8).json`** — 29 remiz, 65 pojazdów i 63 przypisania zdjęć; zachowuje fotografie `VehiclePhotos(2).zip`. Brodła 429[K]49: motopompa 500 l/min. Grojec 429[K]68: typ GLBM 0,3/0,5, motopompa 500 l/min.
 - Sześć dodatkowych fotografii: OSP Zagórze — 429[K]37, 429[K]56, 429[K]57, 429[K]69; OSP Żarki — 427[K]38, 427[K]39.
 - W działającym projekcie katalog ma leżeć w `Assets/fleet-catalog.json`, a fotografie w `Assets/VehiclePhotos/`. Są to zasoby projektu, **nie AppData**.
 - Katalog floty jest nadrzędnym źródłem parametrów, numerów operacyjnych, wyposażenia, marek/modeli i przypisań remiz. Zachowywać ręcznie skorygowane dane.
@@ -155,6 +155,18 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Nowe obowiązki dyżurnego na podstawie oficjalnych zadań SKKP są na razie **tylko propozycjami**, nie wdrożono ich w 0.6.4.2.
 - Testy statyczne **78/78 PASS** na kompletnym rozpakowanym ZIP; **brak kompilacji WPF** w tym środowisku. Wyłącznie bieżący `Tests/verify_0642.py`, słowniczek zaktualizowany.
 - Flota zachowana: 29 remiz, 65 pojazdów, 63 zdjęcia i 108 plików Assets; starsze zapisy i migracje należy sprawdzić na Windows.
+
+### 0.6.4.3 — „Logistyka pod kontrolą” (18.11.2026)
+
+- Zapotrzebowania KDR mają priorytety „Pilne” i „Zwykłe”; podpowiadane są magazyny posiadające sprzęt i obsadzony transport, według odległości geograficznej. Preferowane są wolne pojazdy logistyczne; ostatecznie dyżurny decyduje.
+- ETA przed wyjazdem jest orientacyjna, a po wyznaczeniu trasy korzysta z czasu pozostałego pojazdu. Nie przedstawiać dystansu geograficznego jako dokładnej trasy OSRM.
+- Brak zgodnego odbiorcy wywołuje jednorazowe ostrzeżenie, bez teleportacji i duplikacji sprzętu. Zbędne automatyczne, niezarezerwowane potrzeby KDR są anulowane po opanowaniu działań; historycznych ręcznych zgłoszeń nie dotykamy.
+- Po rozpoznaniu premie dowodzenia i współpracy PSP/OSP trwają tak długo, jak wymagane obsadzone zastępy są na miejscu. Nie zależą od chwilowego wykonywania natarcia. Limit koordynacji +15% oraz warunki stanowiska dowodzenia pozostają.
+- Telefon otwiera się jako zmaksymalizowany; godzina meldunku radiowego jest w jednej linii z danymi zastępu.
+- Nowym katalogiem floty jest `fleet-catalog(8).json`; Brodła 429[K]49 i Grojec 429[K]68 otrzymały opisane powyżej korekty. Wszystkie 63 fotografie zachowane.
+- Balansu AODO nie zmieniano. Praca w ODO daje modelowy wyższy wkład roty, rota asekuracyjna zajmuje ratowników i nie prowadzi natarcia, a brak osłony powoduje karę. To parametry gry, nie procedura do rzeczywistych działań.
+- Pełna paczka źródłowa: tylko `Tests/verify_0643.py`, aktualny słowniczek oraz obowiązkowa dokumentacja. Kontrole statyczne po samodzielnym rozpakowaniu ZIP: 111/111 PASS. Kompilacja Windows/.NET 10/WPF niewykonana.
+- Plan wersji 0.6.5.0 „Żywe zdarzenia” pozostaje osobny i niewdrożony: [PLAN-0.6.5.0-ZYWE-ZDARZENIA.md](./PLAN-0.6.5.0-ZYWE-ZDARZENIA.md).
 
 ## 13. Kontrola końcowa każdego wydania
 
