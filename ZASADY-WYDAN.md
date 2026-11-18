@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.3.11**. Następna zaplanowana: **0.6.4.0 „Logistyka operacyjna”**.  
+> Ostatnia pełna wersja źródeł: **0.6.4.0 „Logistyka operacyjna”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -122,9 +122,9 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Witryna i jej `README.md` są odrębnym obszarem: **nie nadpisywać ręcznie aktualizowanego README na GitHubie** starszą kopią ze źródeł gry.
 - Niniejszy `ZASADY-WYDAN.md` w repozytorium jest trwałym dokumentem referencyjnym dla kolejnych rozmów i buildów. Aktualizować go po zmianie ustaleń, a wersję z niego dołączać także do kolejnych pełnych źródeł.
 
-## 12. Następna wersja — 0.6.4.0 „Logistyka operacyjna” (PLAN, jeszcze nie wdrożono)
+## 12. Wydanie 0.6.4.0 „Logistyka operacyjna” (pełne źródła przygotowane 18.11.2026; testy WPF na Windows wciąż do wykonania)
 
-**Cel:** realne uzupełnianie wyposażenia na akcjach, bez jego teleportowania i bez duplikacji sztuk.
+**Zrealizowany zakres źródłowy:** uzupełnianie wyposażenia na akcjach bez teleportowania i duplikacji sztuk. Stan funkcjonalny wymaga jeszcze potwierdzenia kompilacją oraz testami WPF na Windows.
 
 1. **Zapotrzebowanie KDR** na konkretny brakujący sprzęt; sprawdzenie wyposażenia obecnych zastępów oraz magazynów remiz.
 2. **Rezerwacja sprzętu** w magazynie, aby jedna sztuka nie została równocześnie wydana dwa razy.
