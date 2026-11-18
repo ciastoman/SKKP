@@ -1,7 +1,7 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.4.1 „Logistyka operacyjna — poprawka kompilacji”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
+> Ostatnia pełna wersja źródeł: **0.6.4.2 „KDR zgłasza, SKKP dowozi”**. Następny etap zostanie uzgodniony po odbiorze na Windows.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
 ## 1. Forma każdego wydania
@@ -143,6 +143,17 @@ Nie przywracać usuniętych etykiet „Kod / Scenariusze / Ikony i dźwięki” 
 - Pełna źródłowa paczka 0.6.4.1 oparta na 0.6.4.0; wszystkie 108 zasobów i 63 fotografie zachowane; aktualny test `Tests/verify_0641.py`, bez historycznego testu.
 - Przegląd słowniczka: doprecyzowanie hasła „Zapotrzebowanie logistyczne” o zakres 1–12 sztuk.
 - Testy statyczne 62/62 i test ZIP po samodzielnym rozpakowaniu zaliczone; **kompilacja .NET 10 / WPF nie została tu wykonana**.
+
+### 0.6.4.2 — „KDR zgłasza, SKKP dowozi” (18.11.2026)
+
+- Usunięto zbędny przycisk „Wznów tankowanie w remizie”. Przyjazd do remizy nadal automatycznie uruchamia uzupełnianie zbiorników.
+- To **KDR po rozpoznaniu** zgłasza w rejestrze brak konkretnych przyborów i narzędzi; dyżurny SKKP widzi listę zgłoszeń jako pierwszą kontrolkę, a następnie wybiera magazyn i przewoźnika.
+- Niezarezerwowane automatyczne prośby KDR są odwoływane, gdy brak ustaje; stare ręcznie utworzone potrzeby z wcześniejszego game.db nie są w ten sposób usuwane.
+- Po faktycznym dojeździe transportu **przekazanie sprzętu jest automatyczne** i zachowuje wymagania obsady, zgodności, czasu i ewidencji jednego kwitu. Usunięto z GUI grupę ręcznego przekazywania.
+- Pilny meldunek wymagający potwierdzenia oraz otwarty raport KDR pauzują symulację; przyjęcie wiadomości przywraca wcześniejsze tempo, chyba że użytkownik sam wcześniej pauzował.
+- Nowe obowiązki dyżurnego na podstawie oficjalnych zadań SKKP są na razie **tylko propozycjami**, nie wdrożono ich w 0.6.4.2.
+- Testy statyczne **78/78 PASS** na kompletnym rozpakowanym ZIP; **brak kompilacji WPF** w tym środowisku. Wyłącznie bieżący `Tests/verify_0642.py`, słowniczek zaktualizowany.
+- Flota zachowana: 29 remiz, 65 pojazdów, 63 zdjęcia i 108 plików Assets; starsze zapisy i migracje należy sprawdzić na Windows.
 
 ## 13. Kontrola końcowa każdego wydania
 
