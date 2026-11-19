@@ -87,6 +87,7 @@
 - Gra to **realistyczny tryb pracy dyżurnego SKKP**. Zgłoszenia trafiają jako elektroniczne karty CPR; **nie** implementować roli operatora 112 ani rozmów przyjmujących alarm.
 - OSP ma zmienną dostępność ludzi dzień/wieczór/noc, PSP pracuje na zmianach A/B/C i **wspólnej puli ratowników** (bez osobnej „wirtualnej” załogi każdego samochodu).
 - Tylko dostępne obsady mogą wykonać zadanie; sprzęt nie zastępuje ludzi.
+- **Decyzja planistyczna przed 0.7.0 i dla 0.7.0 (19.11.2026): nie wprowadzać przenoszenia ani czasowego stacjonowania zastępów w innych remizach/posterunkach.** Powiat chrzanowski jest na tyle mały, że taka mechanika nie wnosi wartości. Zastępy dysponuje się bezpośrednio z macierzystych jednostek do zdarzeń. Można rozwijać podgląd wolnych sił, czasów dojazdu, gotowości OSP/PSP i wsparcia spoza powiatu — **bez przesuwania wozów między remizami**.
 - Telefon służbowy: jedno okno, dzwonek, kolejka/dziennik kontaktów, naturalne krótkie dialogi; czerwony „Zakończ rozmowę”, przycisk **„Powiadom służby”**, oddzielne **„Wsparcie zewn.”**.
 - Powiadomienie służby nie oznacza przyjazdu; współdziałanie policji/ZRM/energetyki/gazu/PKP PLK zależne od potrzeb zdarzenia. Unikać dublowania już wezwanych/obecnych.
 - Zewnętrzne wsparcie ma czas przygotowania (dotychczas 2 min) i dojazd oparty o odległość; nie teleportować pojazdów.
