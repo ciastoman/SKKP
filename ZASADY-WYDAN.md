@@ -1,8 +1,17 @@
-# SKKP Professional — zasady wydań, rozwoju i utrzymania
+# SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.2 „Żywsze roty”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.2.1 „Cicha łączność, ruchoma mapa”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.2.1 — „Cicha łączność, ruchoma mapa”
+
+- Przesuwanie mapy 2D lewym przyciskiem myszy działa wyłącznie na obrazie, nie na pozycji zdarzenia ani pojazdów. Dane OSM są odczytywane dla nowego środka po puszczeniu myszy; zoom 80/160/300 m zachowuje wybrany środek.
+- Wóz na mapie: **czerwona elipsa z typem z centralnego katalogu** (GBA, GBARt itd.), numer operacyjny i kartoteka dostępne jak dotychczas.
+- Natarcie jest równie cienkie jak zasilanie wodne: **2,8 DIP aktywne, 2,0 DIP w sprawianiu**. Biegnie do rzeczywiście przydzielonej i zdolnej roty; linie nie sterują przepływem ani zadaniami.
+- Rutynowy meldunek KDR na progach 5/15/30 minut nie powtarza się bez istotnej zmiany sytuacji. Stan ostatniego meldunku w opcjonalnym `Vehicle.LastPeriodicState0721` jest zapisywany w `game.db` i zerowany na nową dyspozycję, nową grę, nową zmianę lub po powrocie. **Pilne meldunki oraz radio na żądanie nie są filtrowane**.
+- Pełna paczka 0.7.2.1 zgodna z zasadami: aktualny słownik, jeden bieżący test `Tests/verify_0721.py`, nowy audyt/raport i wszystkie zasoby. Testy statyczne 141/141 PASS; kompilacja i gra WPF na Windows jeszcze niepotwierdzone.
+- **Plan 0.7.3**: osobne reprezentacje wypadków drogowych, pożarów leśnych, zalania/wody i zdarzeń technicznych na podstawie faktycznego stanu KDR/OSM. Bez fikcyjnych ofiar i dodatkowych jednostek.
 
 ## Ustalenia SKKP 0.7.2 — „Żywsze roty” (19.11.2026)
 
