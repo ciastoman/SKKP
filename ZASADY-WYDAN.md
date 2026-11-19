@@ -1,8 +1,21 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.2.2 „Czytelna mapa”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.3 „Taktyka wielu scenariuszy”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.3 — „Taktyka wielu scenariuszy”
+
+- Pełne źródło bazuje na **0.7.2.2**, które użytkownik potwierdził jako działające. W 0.7.3 renderer 2D dostaje profile dla wypadków drogowych, pożarów lasu/traw, zalania, drzewa na drodze i potwierdzonych zagrożeń gazowych/elektrycznych.
+- **Odrębne rozmieszczenie rot** zależy od profilu, rzeczywistej obsady i przydziału KDR. Rota zabezpieczenia działa na obwodzie. Istniejące linie wężowe, zoom, pan i etykiety adresów pozostają.
+- Wypadek: stan stabilizacji i zabezpieczenie wyłącznie z aktualnego silnika; nie pokazywać niepotwierdzonej liczby pojazdów ani osób.
+- Las i trawy: symboliczne obrysy na podstawie intensywności i etapu ekspozycji; obrona tylko dla rzeczywistych zastępów KDR.
+- Zalanie: odróżnić **rzeczywistą wydajność odpompowania** (`FloodActualRate054`) od **wydajności dostępnych pomp** (`AvailableFloodRate`). Nie mylić zalanej wody z wodą w zbiornikach GBA.
+- GAZ/ENERGIA: potwierdzony `SafetyHazard0624` po rozpoznaniu, usunięcie strefy alarmowej dopiero po faktycznym zakończeniu zadania służby.
+- Profil akwenów jest **przygotowany na przyszłość**, ale nie dodano scenariuszy wodnych, łodzi, nurków ani nowych poszkodowanych.
+- **Nie zmieniono** `Models.cs`, `Core/SimulationHost.cs`, silnika KDR ani `game.db`. Nie tworzono nowych timerów, wyjazdów, ludzi ani obiektów ratowniczych.
+- Pełna paczka ZIP zawiera aktualny słowniczek, CHANGELOG, CIEKAWOSTKI, ROADMAP, audyt i **wyłącznie test bieżącej wersji**. Kontrole statyczne **187/187 PASS** (również po rozpakowaniu). Kompilacja Windows/WPF wymaga testu użytkownika.
+- **Plan 0.7.4**: „Duża akcja” — grupowanie wielu jednostek, prawdziwa obecność służb współdziałających, odcinki KDR i wydajność dużych scen.
 
 ## Ustalenia SKKP 0.7.2.2 — „Czytelna mapa”
 
