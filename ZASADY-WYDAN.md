@@ -1,8 +1,16 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.2.1 „Cicha łączność, ruchoma mapa”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.2.2 „Czytelna mapa”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.2.2 — „Czytelna mapa”
+
+- Czerwone elipsy wozów na mapie 2D są kompaktowe (**42–64 × 23 DIP**, zależnie od typu), z nadal widocznym mniejszym numerem operacyjnym i kliknięciem w kartotekę.
+- Podkład zachowuje 111 749 obiektów OSM, a baza offline zawiera teraz tabelę `map_label` z **23 393** realnymi numerami domów oraz **4 933** nazwanymi odcinkami dróg po filtrze funkcji jezdni. Etykiety nie są pobierane przez Internet.
+- Skala **80 m**: do 34 numerów domów; **160 m**: do 14; **300 m**: bez numerów. Nazwy ulic wyświetlać selektywnie bez duplikatów, z ograniczeniem nakładania napisów.
+- Miejscowość w rogu sceny wyznaczać z najbliższego `addr:city`, tylko gdy istnieje w danych adresowych. Pełne dokładne punkty `place=*` wymagają osobnego eksportu dla całego powiatu. Nie wymyślać nazw ani adresów.
+- Zachować wszystkie mechaniki KDR, CPR, łączności, hydrauliki oraz floty z 0.7.2.1; nie modyfikować `game.db`. Pełny ZIP z bieżącym testem `Tests/verify_0722.py`, słownikiem i dokumentacją; **159/159 statycznych kontroli PASS**, kompilacja WPF na Windows nadal do odbioru.
 
 ## Ustalenia SKKP 0.7.2.1 — „Cicha łączność, ruchoma mapa”
 
