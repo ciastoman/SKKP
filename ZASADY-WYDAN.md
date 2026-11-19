@@ -209,7 +209,17 @@ Dopisek nie zastępuje wymaganych praw do fotografii, logotypów ani nagrań. Za
 - Pełny ZIP **286 plików**, jedyny `Tests/verify_0652.py`; **182/182 PASS** na kompletnym źródle i po niezależnym rozpakowaniu ZIP, CRC poprawne. **Bez kompilacji .NET 10/WPF**.
 - Remiza.pl podaje historyczny procent „Gotowość” dla OSP KSRG za 2025, ale **nie jest to bieżąca dostępność dzienna/nocna**. Danych tych nie przenoszono automatycznie do symulacji.
 
-## 13. Kontrola końcowa każdego wydania
+## 13. Plan 0.7.x — „Widok taktyczny 2D” (koncepcja zatwierdzona 19.11.2026; bez wdrożenia)
+
+- W ramach **gałęzi 0.7.x** planuje się zakładkę **„Widok taktyczny 2D”** w istniejącej karcie zdarzenia, inspirowaną dwuwymiarowym widokiem Football Managera.
+- Lokalny wycinek mapy / schemat miejsca zdarzenia pokazuje rzeczywiste w grze pojazdy, roty/zespoły jako animowane znaczniki, linie wężowe, strefy zagrożenia i stanowiska pracy.
+- Widok jest **prezentacją pracy KDR i sił z istniejącej symulacji**. Nie wprowadza dowodzenia pojedynczymi strażakami ani niezależnego silnika akcji; gracz nadal pełni rolę dyżurnego SKKP.
+- Stosować potwierdzenia KDR i oznaczenia niepewności; nie udawać GPS ratowników, nie pokazywać CPR jako potwierdzonego rozpoznania, nie tworzyć „wirtualnych” osób poza obsadą.
+- Start od lekkiego MVP, potem integracja z zadaniami KDR, służbami i różnymi scenariuszami; zachować wydajność przy kompresji czasu i zgodność `game.db`.
+- **Szczegółowa zatwierdzona koncepcja i kryteria odbioru:** [PLAN-0.7.X-WIDOK-TAKTYCZNY-2D.md](./PLAN-0.7.X-WIDOK-TAKTYCZNY-2D.md).
+- **Brak przypisania do konkretnej podwersji 0.7.x.** Wpis nie oznacza, że funkcja jest już zaimplementowana, ani nie zmienia zakresu 0.7.0.
+
+## 14. Kontrola końcowa każdego wydania
 
 - [ ] Nowy build oparty na najnowszym pełnym ZIP; brak regresji
 - [ ] Spójna wersja w kodzie, GUI i dokumentach
