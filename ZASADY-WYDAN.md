@@ -1,8 +1,17 @@
 # SKKP Professional — zasady wydań, rozwoju i utrzymania
 
-> **Dokument referencyjny projektu — stan na 18 listopada 2026 r.**  
-> Ostatnia pełna wersja źródeł: **0.6.5.2 „Radiowa dyscyplina”**. Pełne źródła i testy statyczne gotowe; kompilacja WPF na Windows nadal do odbioru.  
+> **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.2 „Żywsze roty”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.2 — „Żywsze roty” (19.11.2026)
+
+- Bazą 0.7.2 jest pełna wersja 0.7.1, potwierdzona przez użytkownika jako działająca na Windows. Rozbudowa dotyczy wyłącznie wizualizacji taktycznej i aktualnych dokumentów; nie zmieniono silnika działań, bilansu, floty, OSM ani `game.db`.
+- **Widok taktyczny**: aktywne zasilanie wodne rysować cieńszą turkusową linią (2,8 DIP); w czasie rozwijania 2,0 DIP i kreska przerywana.
+- **Linia natarcia** musi kończyć się na znaczniku rzeczywistej roty kwalifikującej się do obsługi prądu, a nie na środku miejsca zdarzenia. Wykluczać roty zajęte sprawianiem, odpoczynkiem i zmianą zadania. Liczba aktywnych narysowanych linii nie może przekroczyć rzeczywistych prądów zapisanych w symulacji.
+- Ruch znaczników pokazuje fazy przygotowania, wyjścia, dojścia, pracy, sprawiania, odpoczynku i powrotu, na podstawie istniejącej obsady i czasu sceny; bez nowego timera rozgrywki i bez tworzenia dodatkowych osób. Symbol D/P to istniejący kierowca/operator pompy spoza dwuosobowych rot.
+- Usunąć z interfejsu **powtarzane dopiski** o poglądowym/orientacyjnym położeniu mapy, ale zachować rzetelne informacje w dokumentacji, atrybucję OSM i ODbL.
+- Każde wydanie: pełny ZIP, jeden bieżący test, aktualny CHANGELOG/CIEKAWOSTKI/ROADMAP, testy, wyniki, słownik i audyt. Dla 0.7.2 testy statyczne **119/119 PASS** także po rozpakowaniu ZIP; brak potwierdzonej kompilacji WPF.
 
 ## 1. Forma każdego wydania
 
