@@ -1,4 +1,4 @@
-:root{--bg:#0a111a;--bg-soft:#0e1822;--bg-2:#111e29;--card:#111c27;--stroke:#283844;--text:#f4f4ee;--muted:#9cabb5;--subtle:#6b8292;--orange:#ff7759;--orange-light:#ffb490;--cream:#f1dfc8;--green:#a2d4b1;--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif;--container:1192px;--radius:16px}
+:root{--bg:#0a111a;--bg-soft:#0e1822;--bg-2:#111e29;--card:#111c27;--stroke:#283844;--text:#f4f4ee;--muted:#9cabb5;--subtle:#6b8292;--orange:#ff7759;--orange-light:#ffb490;--cream:#f1dfc8;--green:#a2d4b1;--mono:'IBM Plex Mono',monospace;--display:'IBM Plex Sans',sans-serif;--body:'Inter',sans-serif;--container:1192px;--radius:16px}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;font-family:var(--body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}

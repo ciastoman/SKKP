@@ -1,11 +1,14 @@
 # ROADMAP — Oficjalna witryna SKKP Professional
 
-## Zrealizowano (0.2.0)
-- Autentyczna galeria gry, pięć screenshotów, powiększanie, układ mobilny.
-- Poprawne adresy GitHub Pages pod `/SKKP/`.
+## Zrealizowano (0.3.0)
+- Własny, responsywny landing page gry.
+- Autentyczna galeria sześciu screenshotów i powiększanie w oknie dialogowym.
+- Osobna prezentacja widoku taktycznego 2D i aktualizacja mechanik do linii 0.7.3.3.
+- Neutralna typografia IBM Plex Sans / Inter, oznaczenie generacji starszych i nowszych zrzutów.
+- Poprawne ścieżki GitHub Pages pod `/SKKP/`.
 
-## Kolejne możliwości
-- Nowe screenshoty z kolejnych wydań SKKP Professional.
-- Sekcja changeloga wersji gry pobierana lub uzupełniana przy publikacji.
-- Link do publicznych wydań w `assets/config.js`, po uruchomieniu dystrybucji.
-- Opcjonalnie zwiastun i dodatkowe materiały z przebiegu służby.
+## Kolejne możliwości (plan strony)
+- Dodawanie zrzutów z kolejnych wydań i datowane wpisy o nowościach.
+- Uzupełnianie historii wersji gry po zatwierdzeniu nowych buildów.
+- Podpięcie odnośnika do publicznego wydania dopiero po udostępnieniu pliku do pobrania.
+- Dodatkowe materiały z rozgrywki (krótkie meldunki, wideo prezentujące interfejs), gdy zostaną przygotowane.

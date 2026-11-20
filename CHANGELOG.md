@@ -1,13 +1,12 @@
 # CHANGELOG — Witryna SKKP Professional
 
-## 0.2.0 — 17.11.2026 · Prawdziwa galeria
+## 0.3.0 — 20.11.2026 · Taktyka bliżej ludzi
 
-- Hero: zastąpiono schemat interfejsu rzeczywistym zrzutem głównej mapy SKKP Professional.
-- Galeria: pięć autentycznych ekranów z wersji 0.6.3.5 (mapa, zadysponowane zastępy, bilans działań, kartoteka pojazdu, meldunki).
-- Nowy pełnoekranowy podgląd screenshotów z nawigacją strzałkami, Esc i otwieraniem oryginalnego obrazu.
-- Miniatury i zakładki do przełączania ekranów; wersja responsywna.
-- Zaktualizowano tytuły, opisy i informacje o wersji, metadane SEO oraz adres witryny `/SKKP/`.
-- Dodano informacje o źródłach fotografii wykorzystywanych w grze w stopce.
-- Optymalizacja zrzutów do WebP, bez pobierania zasobów z obcych serwerów.
-- Plik README.md zachowano *bez jakiejkolwiek zmiany* w stosunku do pliku przekazanego przez użytkownika.
-- Status pobierania pozostaje niezależny od galerii: bez fikcyjnego linku do gry.
+- Nowy autentyczny zrzut widoku taktycznego 2D z gry (linia 0.7.x), w galerii i oddzielnej sekcji prezentacyjnej.
+- Galeria ma sześć ekranów, zakładki i nawigację powiększenia obejmują również nowy materiał.
+- Typografia: IBM Plex Sans dla nagłówków, Inter dla treści, IBM Plex Mono dla metadanych.
+- Zaktualizowane opisy funkcji 0.7.3.3: taktyczny podgląd lokalny, zmiana skali 40/80/160/300 m, realne pojazdy i roty, dane OSM, powiązane linie wężowe, zwięzła łączność KDR.
+- Wyraźnie rozdzielono starsze zrzuty 0.6.3.5 od nowego ekranu linii 0.7.x.
+- Dostosowano kierunki rozwoju: grupowanie znaczników, sektory KDR, optymalizacja — jako plany, nie gotowe funkcje.
+- Aktualizacja linku do repozytorium SKKP i numeru wersji w sekcji pobierania, bez udawania dostępności publicznego instalatora.
+- README.md pozostaje bez zmian.
