@@ -4,6 +4,16 @@
 > Ostatnia przygotowana pełna wersja źródeł: **0.7.4.1 „Radiowa dyscyplina”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
+## Ustalenia SKKP 0.7.7 — „Strażacy w terenie”
+
+- **Nową bazą źródłową jest 0.7.7**, zbudowana bezpośrednio z dostarczonych przez użytkownika pełnych źródeł **0.7.5.1 od Codexa**. Wersja **0.7.6 „Dyżurka pod obciążeniem” nie została tym krokiem wdrożona**; użytkownik celowo wybrał numer 0.7.7 dla rozwoju podglądu 2D.
+- Dodać **pieszy planer na lokalnych obrysach OSM** `Windows/TacticalWalkingGrid077.cs`: bounded grid 120×75, A*, omijanie budynków i zamkniętych barier, możliwość przejścia przez oznaczone bramy, ochrona narożników i wygładzanie. Przy braku ścieżki nie wizualizować przejścia przez znaną ścianę; tylko bez faktycznej geometrii obowiązuje dotychczasowy schematyczny fallback.
+- **Animacja rot** na współrzędnych geograficznych i wielopunktowych trasach; tempo proporcjonalne do długości trasy. Zmiana zadania lub kadru przeplanowuje marsz z bieżącego położenia, pauza zatrzymuje przejście, linia natarcia nadal kończy się na właściwej rocie. Nie wpływać na czasy pracy w silniku.
+- **Stanowiska pojazdów** `Windows/TacticalParking077.cs` wyznaczać na istniejących przejezdnych odcinkach dróg OSM, z zachowaniem odstępu i zapamiętaniem współrzędnych w pamięci sceny; gdy brak drogi, korzystać ze schematycznego fallbacku. Nie dopisywać pozycji do `game.db`.
+- Zostają bez zmian: **wariant A**, skale 40/80/160/300 m, 29 remiz, 65 wozów, 63 zdjęcia, 111 749 geometrii, hydraulika, KDR, zwięzłe radio i telefon, pilne alerty wody/AODO, płynność ×10/×15. Potwierdzone **109/109 zasobów bez zmian** względem 0.7.5.1.
+- **Pełny ZIP 0.7.7** zawiera bieżące `Tests/verify_077.py`, aktualny słownik i pojedynczy audyt 0.7.7, CHANGELOG, CIEKAWOSTKI, ROADMAP, wyniki i testy odbiorcze. **324/324 statyczne kontrole PASS**, również po niezależnym rozpakowaniu 302 plików, CRC PASS; kompilacja WPF i gra na Windows pozostają do odbioru.
+- Plan: **0.7.8 „Rozwinięcie bojowe”**, **0.7.9 „Żywe zdarzenia”**, **0.8.0 „Taktyczny obraz akcji”**; oddzielnie nieukończona dyżurka 0.7.6.
+
 ## Ustalenia SKKP 0.7.4.1 — „Radiowa dyscyplina”
 
 - Rutynowe meldunki radiowe tylko dla zdarzeń operacyjnych: wyjazd zastępu, przyjazd na miejsce, jednorazowe rozpoczęcie rozpoznania, jednorazowy meldunek KDR o faktycznie zbliżającym się końcu prac oraz wyjazd z miejsca akcji. **Usunąć automatyczne raporty co 5/15/30 minut** i meldunki postępu 50/85% w radiu; postęp nadal zapisany w historii.
