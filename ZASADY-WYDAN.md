@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.4 „Duża akcja”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.4.1 „Radiowa dyscyplina”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.4.1 — „Radiowa dyscyplina”
+
+- Rutynowe meldunki radiowe tylko dla zdarzeń operacyjnych: wyjazd zastępu, przyjazd na miejsce, jednorazowe rozpoczęcie rozpoznania, jednorazowy meldunek KDR o faktycznie zbliżającym się końcu prac oraz wyjazd z miejsca akcji. **Usunąć automatyczne raporty co 5/15/30 minut** i meldunki postępu 50/85% w radiu; postęp nadal zapisany w historii.
+- Pilne alerty o poszkodowanych, wodzie, AODO, problemie sprzętowym, braku obsady, eskalacji zagrożenia i nieudanym dowozie pozostają w radiu i mogą wymagać potwierdzenia; ręczne pytania KDR/odpowiedzi pozostają niezależne.
+- Rutynowa obsługa magazynu, zwijanie węży, statusy służb, zakończone zadania rot i powroty do remiz trafiają do historii, nie generują dodatkowego głosu.
+- Opcjonalne flagi `Incident.ReconStartedRadio0741` i `Incident.NearFinishRadio0741` w istniejącym JSON zdarzenia zapobiegają ponownej transmisji po save/load lub zmianie KDR. **Brak migracji tabel SQL**.
+- Przyśpieszyć wyłącznie **wizualizację** ruchu rot na mapie 2D (marsz 0,90 min zamiast 2,0; interpolacja 330 ms zamiast 750), zachowując rzeczywisty czas rozpoznania, prac, obsad, wody i AODO.
+- Zachować **wariant A** znaczników, zoom 40/80/160/300 m, skupiska, faktyczne służby i odcinki KDR z 0.7.4.
+- Pełna paczka źródeł 0.7.4.1 z tylko bieżącym `Tests/verify_0741.py`, zaktualizowanym słownikiem, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, audytem i testami odbiorczymi. Kontrole statyczne **277/277 PASS** także po niezależnym rozpakowaniu; Windows/WPF nadal wymaga kompilacji.
 
 ## Ustalenia SKKP 0.7.4 — „Duża akcja”
 
