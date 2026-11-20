@@ -1,8 +1,15 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.3 „Taktyka wielu scenariuszy”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.3.1 „Wariant B”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.3.1 — „Wariant B”
+
+- Użytkownik wybrał **wariant B** pojazdów na planszy taktycznej: niewielki czerwony prostokąt z zaokrąglonymi rogami, kodem typu u góry i prawdziwym numerem operacyjnym na ciemniejszym dolnym pasku.
+- Rozmiary znacznika 50–78 × 29 DIP. Należy zachować kliknięcie otwierające kartotekę, możliwość przeciągania podkładu, zoom i odrębne znaczniki rot.
+- Zakres wersji 0.7.3.1 jest wyłącznie prezentacyjny. Bez zmian `game.db`, floty, logiki zdarzeń/KDR/CPR, hydrauliki i OSM.
+- Pełny ZIP, aktualny słownik i tylko `Tests/verify_0731.py`. Kontrole statyczne **197/197 PASS** także po rozpakowaniu; kompilacja Windows/WPF do odbioru użytkownika.
 
 ## Ustalenia SKKP 0.7.3 — „Taktyka wielu scenariuszy”
 
