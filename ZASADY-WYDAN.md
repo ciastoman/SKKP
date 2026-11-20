@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.3.3 „Konkret na łączności”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.4 „Duża akcja”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.4 — „Duża akcja”
+
+- Pełny build **0.7.4** na bazie 0.7.3.3; zachować hotfix **wariantu A** pojazdów na mapie (czerwony zaokrąglony prostokąt z kodem typu, bez dolnego paska), łączność i zoom 40 m.
+- **Naprawa zoomu:** geometria OSM, pozycje wozów, rot, KDR, operatorów i stref muszą korzystać ze wspólnej projekcji. Odległości taktyczne mnożyć przez `WorldScale074=160/radius` dla 40/80/160/300 m. Rozmiary znaczników również maleją przy oddalaniu, z ograniczeniem czytelności. Po zmianie zoomu i panie zerować wyłącznie `previousPositions` animacji, bez zmiany stanu gry. Geograficzną kotwicę postoju zachować dla danego zdarzenia między zmianami kadru — bez wybierania nowej drogi na każdym zoomie.
+- **Duża akcja:** grupować bliskie pojazdy na skali 160/300 m, pozostawiając menu wskazujące faktyczne wozy. Roty natarcia z podłączonym prądem mają zachować własny symbol. Grupowanie nie tworzy nowych jednostek.
+- **Służby współdziałające na 2D:** znacznik dopiero przy `ArrivedAt`, statusie `Arrived`/`Working`, fizycznym typie służby i braku rozpoczętego powrotu. Brak ikon dla powiadomionych, będących w drodze, SKKW/PKP PLK działających zdalnie.
+- **Odcinki KDR:** pokazywać tylko istniejące niezamknięte odcinki z obecnymi, przypisanymi wozami. Obwiednia nie stanowi geodezyjnej granicy ani nowego rozkazu.
+- **Bez zmian**: `Models.cs`, `Core/SimulationHost.cs`, hydraulika, `game.db`, 29 remiz, 65 pojazdów, 63 zdjęcia i cały indeks OSM. Testy statyczne **270/270 PASS** również po niezależnym rozpakowaniu ZIP, CRC PASS; kompilacja WPF na Windows pozostaje do odbioru.
+- Pełne wydania zawierają tylko bieżący test `Tests/verify_074.py`, aktualny słowniczek, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, audyt i testy odbiorcze. **Plan 0.7.5 „Taktyczna czytelność”**: UX grup, etykiety sektorów, duże DPI i x10/x15, ewentualna warstwa miejscowości `place=*` po dostarczeniu danych.
 
 ## Ustalenia SKKP 0.7.3.3 — „Konkret na łączności”
 
