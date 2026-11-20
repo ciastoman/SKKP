@@ -3,7 +3,7 @@
 ## Zrealizowano (0.3.0)
 - Własny, responsywny landing page gry.
 - Autentyczna galeria sześciu screenshotów i powiększanie w oknie dialogowym.
-- Osobna prezentacja widoku taktycznego 2D i aktualizacja mechanik do linii 0.7.3.3.
+- Osobna prezentacja widoku taktycznego 2D i aktualizacja mechanik do linii 0.7.4.1.
 - Neutralna typografia IBM Plex Sans / Inter, oznaczenie generacji starszych i nowszych zrzutów.
 - Poprawne ścieżki GitHub Pages pod `/SKKP/`.
 
