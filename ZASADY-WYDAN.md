@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.3.1 „Wariant B”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.3.3 „Konkret na łączności”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.3.3 — „Konkret na łączności”
+
+- Bazą każdego kolejnego wydania jest **0.7.3.3**, z wariantem A z hotfixa 0.7.3.2. **Nie przywracać wariantu B** bez decyzji użytkownika. Wariant A: kompaktowy czerwony prostokąt z zaokrąglonymi rogami, biały kod typu GBA/GBARt/GCBA, numer operacyjny tylko w tooltipie i kartotece.
+- **Radio KDR**: krótko i na temat. Pytania i odpowiedzi bez sformułowań typu „w odpowiedzi na pytanie o poszkodowanych”. Rozróżniać poszkodowanych, osoby zagrożone i ewakuowane, nie dopisywać obrażeń.
+- **Telefon służbowy**: zwięzła, naturalna rozmowa, bez powtarzania „potrzebujemy wsparcia rotator / proszę o dysponowanie rotator”. Jedna prośba o konkretny zasób i rzeczowy powód. Sam telefon nie oznacza potwierdzenia wyjazdu ani przyjazdu.
+- **Karta zdarzenia**: usunięty przycisk „Status i historia służb”. Informacje i historia pozostają w wewnętrznej podzakładce „Służby współdziałające” w „Łączność i decyzje”; przycisk „Powiadom służby” zachować.
+- **Mapa taktyczna 2D**: zoom **40/80/160/300 m**, rolka i przeciąganie; na 40 m większa czytelność adresów, przy zachowaniu kolizji etykiet.
+- **0.7.3.3**: pełna paczka źródłowa ze zaktualizowanym słownikiem oraz tylko bieżącym testem `Tests/verify_0733.py`. Kontrole **224/224 PASS**, ponownie po rozpakowaniu ZIP; kompilacja i rzeczywisty odbiór WPF na Windows jeszcze niewykonane.
+- **Plan 0.7.4 „Duża akcja”**: grupowanie wozów, rzeczywista obecność współdziałających służb, odcinki KDR, płynność przy ×10/×15 i wysokim DPI. Nie dodawać automatycznego dowodzenia ani fikcyjnych zasobów.
 
 ## Ustalenia SKKP 0.7.3.1 — „Wariant B”
 
