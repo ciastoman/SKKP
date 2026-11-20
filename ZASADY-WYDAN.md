@@ -1,8 +1,20 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.4.1 „Radiowa dyscyplina”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.8 „Rozwinięcie bojowe”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.8 — „Rozwinięcie bojowe”
+
+- **Aktualna baza źródeł: pełna paczka 0.7.8**, zbudowana na 0.7.7 „Strażacy w terenie” (wcześniej 0.7.5.1 od Codexa). Nie mieszać kodu ze starszym 0.7.4.1 i nie uznawać 0.7.6 za wdrożone.
+- **Pełnopanelowy 2D**: w `TacticalMapPanel070` nie używać sztywnego `Viewbox` 960×600. Wymiary sceny są równe faktycznemu obszarowi tab, zmiana rozmiaru powoduje ponowne wyliczenie współrzędnych po debounce 170 ms. Nigdy nie rozciągać geometrii OSM. Skala lokalnych odległości musi uwzględniać zarówno promień 40/80/160/300 m, jak i wysokość panelu.
+- **Zapytania OSM**: lokalny indeks `TacticalMap070.Load(...,aspectRatio)` ma wczytać obszar według aktualnej proporcji W/H. Pieszy planer `TacticalWalkingGrid077.Build(features,Project,W,H)` skaluje siatkę z limitem około 240×160 pól; nadal unika budynków i zamkniętych ogrodzeń oraz respektuje bramy. Bez fikcyjnego przejścia.
+- **Kartografia**: delikatne wektorowe deseniowanie lasów i terenu zielonego, gradient wody, cienie budynków i podwójne obrysy jezdni dla zbliżeń 40/80/160 m. Nie fabrykować budynków, drzew i wejść.
+- **Hydraulika na 2D**: wizualna długość linii zasilającej rośnie w statusie `Rozwijanie` według `SetupRemainingMinutes`, maleje w `Zwijanie linii` według `MinutesRemaining`; zachować różnicę między celowym zwijaniem a awarią. Krótka, subtelna struga natarcia tylko dla istniejącej roty z rzeczywistym przepływem. Nie zmieniać żadnego czasu ani przepływu w silniku.
+- **Nie tworzyć fikcyjnych rozdzielaczy**: obecny model nie przechowuje rzeczywistej armatury i położenia, dlatego rozdzielacze i osobne odcinki W75/W52 są odłożone do momentu powiązania z danymi i rozkazami.
+- **Zachować** wariant A pojazdów, radio zwięzłe z pilnymi meldunkami, wszystkie zmiany Codexa, 29 remiz / 65 pojazdów / 63 zdjęcia, offline SQLite 111 749 obiektów; w 0.7.8 **109/109 Assets bajtowo identycznych** z 0.7.7 i bez modyfikacji `Models.cs`, `Core/SimulationHost.cs`, `game.db`.
+- Wydanie 0.7.8 jest pełnym ZIP z **jednym** audytem `AUDYT-0.7.8.md`, **jednym** testem `Tests/verify_078.py`, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, zasadami i testami odbiorczymi. Słownik `Windows/FireGlossaryWindow.cs` obowiązkowo aktualizowany w każdym wydaniu. **366/366 statycznych kontroli PASS**, CRC i SHA-256 plików po niezależnym rozpakowaniu PASS; **Windows/.NET/WPF niekompilowane**, trzeba odpalić `BUILD-WINDOWS.ps1`.
+- Dalej: 0.7.8.x armatura po rozbudowie modeli, 0.7.9 „Żywe zdarzenia”, 0.8.0 „Taktyczny obraz akcji”, osobno 0.7.6 „Dyżurka pod obciążeniem”.
 
 ## Ustalenia SKKP 0.7.7 — „Strażacy w terenie”
 
