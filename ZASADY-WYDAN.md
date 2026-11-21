@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.8.1.1 „Polerka operacyjna”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.8.1.3 „Szlif łączności i czytelności”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.8.1.3 — „Szlif łączności i czytelności”
+
+- **Najnowsza pełna baza źródeł 0.8.1.3 jest zbudowana z dokładnie dostarczonej przez użytkownika poprawionej przez Codexa paczki 0.8.1.2**; nie wracać do 0.8.1.1, bo stracimy fix SLRR/SLRr, pamięć stanowisk służb oraz poprawę odświeżania stref bez ponownego ładowania OSM.
+- **Nagłówek karty zdarzenia**: przyciski `Dysponuj`, `Mapa`, `Meldunek` (FontSize 11,5 DIP, padding 7×4 DIP, min. 29 DIP) stoją **w jednym WrapPanel ze statusami** `Na miejscu`, `W drodze`, `KDR`; opcjonalny licznik sąsiednich budynków na końcu. `Zamknij` pozostaje oddzielone przy tytule. Przy normalnej szerokości wszystko w jednym wierszu, przy mniejszej dopuszczone zawijanie, żadnych duplikatów akcji. Zachowane 6 grup, nawigacja Tag, PPM, dwuklik, karty foto i KDR.
+- **Łączność**: usunąć globalny „Powiadom służby” z nagłówka całej sekcji; dwa niezależne przyciski w podzakładkach `Meldunki i decyzje` i `Służby współdziałające` otwierają jeden istniejący telefon `ServicePhoneWindow061.ShowSingle` dla wybranego zdarzenia. Żadne powiadomienie nie stanowi potwierdzenia przyjazdu; bez sztucznych pojazdów i bez podwójnego kontaktu.
+- **Zoom pojazdów 2D**: dodatkowy mnożnik ponad skalę 0.8.1.2 przy 70/160/300 m: ×1.10/×1.22/×1.30, interpolacja ciągła. Obowiązuje flota 65 wozów, fallback typów i 16 archetypów służb; przy 10–40 m = ×1.0. Nie zmieniać współrzędnych, heading, zadań, rur, dróg OSM ani fizyki.
+- **Zawieszenie dodatkowego obiegu CPR**: nowo tworzone zdarzenia mają `LiveNextCprAt0650=null`, silnik nie generuje syntetycznych uzupełnień CPR, nowych powinności `CPR-*`, radiowych transmisji/ponowień ani automatycznego potwierdzenia. `ForwardCpr0650` zostaje bezskutkowym API kompatybilności. Stare `Nowa` i `Przekazana` stają się `Anulowana`, powinności CPR `Anulowane` bez fikcyjnego meldunku. Bieżące UI i raport filtrują dawny szum. **Nie usuwać** elektronicznych kart CPR, rejestru, przyjęcia, powiązania duplikatów i historii game.db. Powiązanie drugiej karty nie generuje dodatkowej wiadomości radiowej.
+- **Wydanie**: 444 pliki, wyłącznie aktualny `Tests/verify_0813.py`, `AUDYT-0.8.1.3.md`, aktualny FireGlossaryWindow.cs, CHANGELOG tylko tej wersji, CIEKAWOSTKI, ROADMAP, ZASADY-WYDAN, WYNIKI-TESTOW, TESTY-ODBIORCZE oraz aktualny plik dialogów. **767/767 kontroli statycznych PASS** przed paczką i po niezależnym rozpakowaniu; CRC PASS i 444/444 SHA-256 PASS. Wszystkie 239 plików `Assets/` bajtowo identyczne z 0.8.1.2. **Bez rzeczywistej kompilacji WPF/.NET 10** (brak SDK); użytkownik musi wykonać `build.ps1` na Windows oraz odbiór DPI i czasu gry.
+- **0.8.2** pozostaje osobnym większym etapem. Drobne szlify wydawać w numeracji 0.8.1.x, nie przeskakiwać bez potrzeby.
 
 ## Wydanie SKKP 0.8.1.1 — „Polerka operacyjna”
 
