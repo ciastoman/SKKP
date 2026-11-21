@@ -1,8 +1,19 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.2 „Zoom bez szarpania”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.3 „Wozy z lotu ptaka”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.3 — „Wozy z lotu ptaka”
+
+- **Nowa baza źródłowa: pełne SKKP Professional 0.7.9.3**, stworzone z 0.7.9.2 bez cofania poprawek Codexa. 0.7.6 pozostało oddzielnym niewdrożonym etapem.
+- **Ikony 2D:** zamiast prostokątów dla znanej floty pokazywać oddzielne **ortograficzne PNG 256×128** z góry. Baza przypisań **65/65 pojazdów** z `Assets/fleet-catalog.json` do `Assets/TacticalVehicles/ByVehicle/{Id}.png`; 24 graficzne archetypy + 23 fallbacki po rodzinie typu + `manifest.json`. Marka/model wpływa na wybór stylizowanego archetypu; **nie twierdzić**, że grafika wiernie odtwarza wyposażenie dachu konkretnego wozu bez osobnej weryfikacji.
+- **Zachować:** numer operacyjny i remiza w stabilnym popupie, klik w wóz otwiera kartotekę, zoom 10–300 m i grupowanie wozów. Nie drukować numerów na dachach. Obrys sylwetki **niebieski PSP** / **złoty OSP**. Dla obcego lub nieobsługiwanego pojazdu pozostawić wariant A jako awaryjną ikonę, nie jako podstawowe oznaczenie.
+- `Windows/TacticalVehicleSprites0793.cs` buforuje `BitmapImage` (OnLoad, Freeze), rozwiązuje ID tylko z bezpiecznych nazw plików. `Windows/TacticalMapPanel070.cs` skaluje sprite i obraca według kierunku drogi. Bez dodatkowych zegarów i migracji game.db.
+- **Publikacja:** `SKKP.Professional.csproj` musi jawnie kopiować wszystkie pliki PNG i manifest z `Assets/TacticalVehicles` do outputu/publish. **Jedyny skrypt build.ps1**, bez BUILD-WINDOWS.ps1.
+- **Jakość:** pełny ZIP 0.7.9.3 zawiera 420 plików. **449/449 statycznych testów PASS** także po niezależnym rozpakowaniu, CRC i SHA-256 zgodne. **109/109 starych assetów niezmienionych**, bez zmian `Models.cs`, `Core/SimulationHost.cs` i `build.ps1`. Brak .NET SDK w środowisku autora — **Windows WPF i prędkość renderowania nadal wymagają testu**.
+- Każde następne pełne wydanie: aktualizacja `Windows/FireGlossaryWindow.cs`, jeden najnowszy test, jeden audyt, WYNIKI-TESTOW, TESTY-ODBIORCZE, CHANGELOG, CIEKAWOSTKI, ROADMAP, ZASADY-WYDAN. Nie przenosić historycznych testów i kopii changelogów.
+- **0.8.0 pozostaje planem**, nie wdrożeniem: rzeczywiste rozprzestrzenianie pożarów na sąsiednie obrysy OSM z deterministycznym modelem/save-load, warstwy mapy i optymalizacja renderera. Rozdzielacze tylko po dodaniu rzeczywistych danych.
 
 ## Wydanie SKKP 0.7.9.2 — „Zoom bez szarpania”
 
