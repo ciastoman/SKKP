@@ -1,8 +1,20 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.6 „Większe wozy, meldunki po pracy”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.7 „Służby z lotu ptaka”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.7 — „Służby z lotu ptaka”
+
+- **Aktualną pełną bazą źródeł jest 0.7.9.7**, przygotowana z pełnego 0.7.9.6; zachowuje dotychczasową flotę 65 wozów, 112 sprite'ów pojazdów PSP/OSP, wszystkie poprzednie usprawnienia 2D i Codexa, hydraulikę, silnik zalania oraz radio OSP.
+- **Nieco większe wozy PSP/OSP przy zoomie 10–40 m**: `RoadPaintCap0796` obecnie `25+25*Clamp((70-radius)/60,0,1)`, współczynnik `1+0.30*closeness`, poprzeczny limit PNG do 50 DIP. Przy 10 m ok. +14%, przy 20 m +12%, przy 40 m +4–5% względem 0.7.9.6. Od 70 m bez zmian. Sprite nie jest szerszy od narysowanej jezdni.
+- **Służby współdziałające w 2D:** 16 nowych osobnych ortograficznych PNG w `Assets/TacticalServices/Sprites`, źródłowy atlas + manifest SHA256. Siedem fizycznych kategorii z modelu: Policja, ZRM, energetyka, gaz, wodociągi, lasy, drogowcy. Dodatkowe warianty sprzętu: ciężki wóz, rotator, cysterna, drabina, chemia, kontener, quad, łódź/przyczepa i wsparcie. Ilustracyjne archetypy — **nie** stwierdzać, że odpowiadają zweryfikowanym modelom transportu każdej ekipy.
+- **Warunek wyświetlania bez zmian:** `ArrivedAt.HasValue`, status `Arrived` lub `Working`, bez rozpoczętego powrotu i tylko `HasPhysicalArrival==true`. Telefon/zgłoszenie/przyjęcie/wyjazd nie tworzą sprite'a. **SKKW i PKP PLK działają zdalnie, więc nie rysować samochodów.** Nieustalony transport zespołu (np. WAD_DRON, PSZ_ARGO, grupa bez opisanej floty) ma neutralny znacznik, bez wymyślonego auta.
+- **Dokładne mapowanie wsparcia zewnętrznego po `ExternalAssetId0622`:** m.in. DAB_ROTATOR, JAW_GCBA, JAW_SCD37, PSZ_SCKN, GLI_SRCHEM, OLK_BOAT, WAD_QUAD. Nie zgadywać modelu z samej nazwy służby.
+- Nowe grafiki są faktycznie renderowane w `Windows/TacticalMapPanel074.cs` przez `Windows/TacticalServiceSprites0797.cs` (cache PNG, `Freeze`, bez nowych rekordów) i kopiowane przez `SKKP.Professional.csproj` do `publish`. Miejsca na scenie są **schematyczne**, bazowane na położeniu faktycznie przybyłego zastępu, nie osobnymi pozycjami GPS służb.
+- **Jeden skrypt `build.ps1`**, bez `BUILD-WINDOWS.ps1`. Żadnych zmian `Models.cs`, `Core/SimulationHost.cs`, zapisu `game.db` i przepływów. 29 remiz, 65 pojazdów, 63 zdjęcia, 111749 obiektów OSM zachowane.
+- Pełna paczka 0.7.9.7: **441 plików**; tylko bieżący `Tests/verify_0797.py` i `AUDYT-0.7.9.7.md`, aktualny słowniczek, CHANGELOG, CIEKAWOSTKI, ROADMAP, testy odbiorcze i wyniki. **532/532 kontrole statyczne PASS**, ponownie po niezależnym rozpakowaniu; CRC i porównanie SHA-256 wszystkich plików PASS, 16/16 PNG odtwarzanych z atlasu PASS. Brak kompilacji WPF/.NET (brak SDK w środowisku); Windows build i odbiór runtime nadal wymagane.
+- **0.8.0 nadal planowane**: symulacja rozprzestrzeniania pożaru na sąsiednie obrysy OSM, deterministyczny stan budynku i kompatybilny save/load; nie wdrożone w 0.7.9.7.
 
 ## Wydanie SKKP 0.7.9.6 — „Większe wozy, meldunki po pracy”
 
