@@ -1,8 +1,22 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.8 „Rozwinięcie bojowe”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9 „Taktyka bez przeszkód”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Ustalenia SKKP 0.7.9 — „Taktyka bez przeszkód”
+
+- **Najbliższa aktualna baza**: pełna paczka 0.7.9, oparta bezpośrednio na 0.7.8; zachowano zmiany z 0.7.5.1/0.7.7/0.7.8 i wariant A pojazdów. 0.7.6 wciąż niewdrożone jako osobny etap.
+- **Węże natarcia i zasilania omijają znane obrysy budynków i zamknięte ogrodzenia** z lokalnego OSM przez istniejący `TacticalWalkingGrid077` (A*). Widoczna część linii może zaczynać się na krawędzi kadru, gdy źródło jest poza widokiem. Brak bezpiecznej trasy = nie rysować odcinka przez ścianę; nie zmieniać fizycznej hydrauliki, modeli i liczników gry.
+- **Drogi połączone na skrzyżowaniach**: najpierw wszystkie obwódki odcinków OSM, następnie wszystkie powierzchnie. Bez fikcyjnych połączeń.
+- **Znacznik wozu wariant A** bez numeru operacyjnego; po najechaniu tooltip z numerem operacyjnym, remizą i statusem; kliknięcie otwiera dotychczasową kartotekę.
+- **Pompiarz**: tylko istniejący członek obsady, graficznie obok wozu przy aktywnej pracy pompy (offset zależny od znaku, kierunku drogi i zoomu), nie osobna fikcyjna rota.
+- **Legenda taktyczna** domyślnie schowana pod przyciskiem `i` w prawym górnym rogu, jak w `Assets/map.html`; ponowne kliknięcie/Esc/kliknięcie poza zamyka ją.
+- **Telefon**: krótsze wypowiedzi zależne od partnera (Policja, ZRM, energetyka, zewnętrzne zasoby typu rotator), bez dublowania prośby i bez fałszywego wyjazdu. **OSP i KDR łączność radiowa, NIE telefon**. Przykłady w `DIALOGI-TELEFONICZNE-0.7.9.md` do dalszego przeglądu.
+- **Żywe zdarzenia**: tylko subtelne efekty pożaru, dymu i zalania zależne od faktycznego rozpoznania i stanu symulacji, bez nowego silnika.
+- **Jedynym skryptem publikującym pozostaje `build.ps1`**. Nie dodawać `BUILD-WINDOWS.ps1`. Skrypt w 0.7.9 bajtowo taki sam jak w 0.7.8.
+- Pełny ZIP **306 plików**, **109/109 Assets bez zmian**, `Models.cs` i `Core/SimulationHost.cs` bez zmian. Jeden najnowszy `Tests/verify_079.py`, jeden `AUDYT-0.7.9.md`, aktualny FireGlossary, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, testy odbiorcze. **392/392 testów statycznych PASS** po niezależnym rozpakowaniu, CRC i SHA-256 PASS; **nie wykonano kompilacji .NET/WPF** (brak SDK w środowisku). Windows build i odbiór runtime pozostają konieczne.
+- Następny duży etap **0.8.0 „Taktyczny obraz akcji”**: warstwy mapy, śledzenie rot, mini-plan, wydajność/DPI. Rozdzielacze tylko po dodaniu prawdziwych danych sprzętu.
 
 ## Wymagania na najbliższe wydanie po 0.7.8 — 2D i rozmowy telefoniczne
 
