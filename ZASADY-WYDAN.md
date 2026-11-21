@@ -1,8 +1,22 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9 „Taktyka bez przeszkód”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.1 „Taktyczne szlify”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.1 — „Taktyczne szlify” (wdrożone)
+
+- **Najnowsza pełna baza: 0.7.9.1** na podstawie pełnego ZIP 0.7.9. Zachowuje poprawki Codexa, 0.7.7/0.7.8 i wariant A. Bez zmian w silniku pożarów.
+- **Zoom 10–300 m bez presetów**: promień double, rolka ze współrzędną kursora jako kotwicą, przyciski +/−, debounce odczytu OSM.
+- **Wąż zasilający:** WaterConnection istnieje niezależnie od możliwości pokazania węża. Jeśli bezpiecznej trasy brak, przy odbiorcy znak ? z opisem, nigdy rysunek przez znane ściany. Hydraulika bez zmian.
+- **AODO/ewakuacja:** stanowiska wybierane lokalnie, do ok. 42 m od centrum zagrożenia, odrzucenie trasy >110 m; bez teleportów i nieprawdziwych przejść.
+- **Numer pompy:** WaterSupplyNetwork.ExplainFlowLimit korzysta z VehicleLabels04841.Display(state,pump.Id), nie surowego ID.
+- **Popup:** trwała nakładka nad mapą zamiast tworzonego na nowo WPF ToolTip; numer operacyjny, remiza, status i OSP/PSP.
+- **Wariant A:** czerwony znacznik typu, złota ramka OSP / niebieska PSP na podstawie Vehicle.IsPsp; formacja słownie w popupie.
+- **Legenda pod i:** wiersze i sekcje, przewijalna i dopasowywana do panelu. Rzeczywiste DPI/WPF do odbioru na Windows.
+- **Bez zmian:** Models.cs, Core/SimulationHost.cs, build.ps1, Assets (109/109), OSM, game.db, hydraulika, KDR, radio i telefon. OSP komunikuje się radiowo.
+- Pełny ZIP 0.7.9.1 ma **306 plików**, tylko bieżący Tests/verify_0791.py i AUDYT-0.7.9.1.md, aktualny FireGlossary, CHANGELOG, CIEKAWOSTKI i ROADMAP. **418/418 statycznych PASS** również po niezależnym rozpakowaniu; CRC/SHA PASS. **Brak kompilacji .NET/WPF**, należy uruchomić build.ps1 na Windows.
+- **Plan 0.8.0:** rzeczywista mechanika rozprzestrzeniania pożarów na sąsiednie budynki OSM; ortograficzne sprite'y GBA po osobnym odbiorze. Nie są wdrożone w 0.7.9.1.
 
 ## Plan poprawek 2D i symulacji po 0.7.9 — zgłoszenia 21.11.2026
 
