@@ -1,8 +1,19 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.3 „Wozy z lotu ptaka”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.4 „Wozy na stanowiskach”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.4 — „Wozy na stanowiskach”
+
+- Aktualną pełną bazą źródeł jest **0.7.9.4**, rozwijająca 0.7.9.3 i wszystkie poprzednie poprawki. **Nie przywracać gigantycznych sprite'ów na oddaleniu**.
+- Sprite z góry musi mieć **krótszy wymiar maksymalnie 84% rysowanej szerokości jezdni OSM**, limit 22 DIP, bez narzuconego minimum 36 DIP. Proporcje PNG 2:1 zostają. Niewidoczny obszar kliku ma minimum 16 DIP niezależnie od grafiki; podpowiedź i kartoteka pozostają.
+- Każdy pojazd **parkuje wzdłuż własnego lokalnego odcinka drogi**, z jego kierunkiem, nie z ogólnej wspólnej osi `roadDirection`. `TacticalParkingSpot0794` przechowuje geograficzny punkt i kąt w pamięci sceny przypisanej do zdarzenia; zmiana zoomu/panu nie może zmienić postoju.
+- Wybierać punkty **wewnątrz** odcinków OSM, nie w samych wierzchołkach skrzyżowań; stosować odstęp ok. 14 m i niewielki offset na stronę namalowanej jezdni. Gdy nie ma danych o drodze, schematyczny fallback jest dopuszczony — bez wymyślania geometrii. Pompiarz po stronie własnego wozu.
+- Skupiska wozów na dalekim zoomie mają być **kompaktowym kółkiem z liczbą**, nie kolejnym szerokim kaflem. Zachować 65/65 PNG, style PSP/OSP i hover bez mrugania.
+- **Bez zmian**: `Models.cs`, `Core/SimulationHost.cs`, `build.ps1`, wszystkie 222 zasoby Assets, w tym 112 PNG, SQLite OSM, hydraulika, save/load `game.db`, zadania KDR i radio OSP.
+- Pełne wydanie 0.7.9.4: 420 plików, tylko `Tests/verify_0794.py`, jeden `AUDYT-0.7.9.4.md`, uaktualniony słownik `Windows/FireGlossaryWindow.cs`, CHANGELOG, CIEKAWOSTKI, ROADMAP, wyniki/testy odbiorcze. **464/464 statyczne PASS** również po niezależnym rozpakowaniu, CRC i SHA-256 wszystkich plików PASS. **Nie wykonano kompilacji WPF/.NET** w środowisku Linux — Windows `build.ps1` i rzeczywista jakość obrazu do odbioru.
+- Plan 0.8.0: realna deterministyczna mechanika rozprzestrzeniania pożaru na sąsiednie budynki OSM, z kompatybilnym zapisem — nie w 0.7.9.4.
 
 ## Wydanie SKKP 0.7.9.3 — „Wozy z lotu ptaka”
 
