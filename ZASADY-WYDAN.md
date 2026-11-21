@@ -1,8 +1,20 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.1 „Taktyczne szlify”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.2 „Zoom bez szarpania”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.2 — „Zoom bez szarpania”
+
+- **Najnowsza pełna baza: 0.7.9.2** na podstawie 0.7.9.1; zachowano poprawki Codexa, wariant A, OSP/PSP, węże, AODO, popupy i legendę. Bez zmiany mechaniki symulacji.
+- **Naprawa płynności zoomu 2D:** rolka 10–300 m natychmiast uruchamia jedną macierz `MatrixTransform` dla podkładu OSM i warstwy akcji (`background` i `action`), z animacją `CompositionTarget.Rendering` w ok. 36 ms stałej czasowej.
+- Macierz jest **zawsze liczona od ostatniego naprawdę narysowanego kadru** (`paintedRadius0792`, `paintedPan0792`), a nie mnożona od poprzedniego ruchu kółka; nie powoduje dryftu punktów.
+- **Kotwica pod kursorem:** dokładnie zachowywać współrzędne geograficzne pod myszą. Po ostatnim ruchu rolki 190 ms debounce, jeden ponowny odczyt SQLite i odtworzenie sceny w identycznych współrzędnych; po drodze cykliczne `Refresh` z silnika nie wywołuje ciężkich przerysowań.
+- Panel chowa popup wozu na czas przewijania, aby obszary interakcji nie odnosiły się do starej pozycji. Animacje `CompositionTarget.Rendering` i timery muszą być odpinane na Unloaded, przy ukryciu, zmianie karty/zdarzenia, resize i ręcznym przesuwaniu.
+- Bez zmian `Models.cs`, `Core/SimulationHost.cs`, `Core/TacticalMap070.cs`, `Windows/TacticalMapActivity075.cs`, `build.ps1`, floty, geometrii offline i `game.db`. Brak nowego budowania `BUILD-WINDOWS.ps1`.
+- **Pełna paczka 0.7.9.2**: 306 plików, 109/109 zasobów bajtowo identycznych z 0.7.9.1, jeden `Tests/verify_0792.py` oraz jeden `AUDYT-0.7.9.2.md`, aktualny słowniczek, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, testy odbiorcze. **430/430 PASS** także po niezależnym rozpakowaniu, matematyka kamery przetestowana na 2400 losowych scenach, CRC i SHA-256 PASS.
+- **Nie wykonano kompilacji WPF na Windowsie**; uruchom `build.ps1` i sprawdź płynność na docelowym PC. Końcowy jednorazowy render przy bardzo gęstym OSM może jeszcze obciążać WPF; rozważyć `DrawingVisual`/cache w kolejnym etapie.
+- Planowana 0.8.0: rzeczywisty, deterministyczny model rozprzestrzeniania ognia na sąsiednie budynki OSM z save/load; sprite'y GBA dopiero po osobnym odbiorze.
 
 ## Wydanie SKKP 0.7.9.1 — „Taktyczne szlify” (wdrożone)
 
