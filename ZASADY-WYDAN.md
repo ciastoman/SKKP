@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.5 „Wozy czytelne z bliska”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.6 „Większe wozy, meldunki po pracy”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.6 — „Większe wozy, meldunki po pracy”
+
+- **Najnowsze pełne źródła: 0.7.9.6** na bazie 0.7.9.5; nie usuwać sprite'ów, zmian łączności ani poprawek Codexa 0.7.5.1.
+- **Skala aut na mapie 2D 10–40 m:** jedno źródło geometrii `RoadWidth0796` dla rysowanej jezdni, parkowania i PNG. Bliski cap jezdni `25+19*Clamp((70-radius)/60.0,0,1)` (44 DIP na 10 m), a rzeczywista grubość względem klasy OSM mnożona przez `(1+0.2*closeness)`. Ikona ma poprzecznie `min(roadWidth*0.96,44)` DIP, mniejsza niż jezdnia. Od 70 do 300 m obowiązuje poprzednia oszczędna skala. Nie zwiększać sztucznie hitboxa wizualnego ani zmieniać samego PNG.
+- **Zalania:** `Core/SimulationHost.cs` nie może nadawać „napływ przewyższa odpompowywanie” zanim w `FloodPumpedLitres054` pojawi się rzeczywiście odpompowana woda. Negatywny meldunek wymaga jednocześnie rzeczywistej wcześniejszej próby oraz bieżącego wzrostu ilości wody mimo pompowania (lub po jego przerwaniu) i przekroczenia etapu alarmu. Komunikaty odróżniają „odpompowujemy, ale woda rośnie” od „praca pomp ustała”. **Nie wyciszać pilnych alertów AODO, awarii i zagrożeń bezpieczeństwa**. Napływ przed przyjazdem i podczas przygotowania nadal jest symulowany, ale nie jest dowodem nieudanej pracy.
+- **Bez zmian:** `Models.cs`, `Core/IncidentDynamics054.cs`, wydajność pomp i hydraulika, liczba ludzi, KDR, zapisy `game.db`, dane offline OSM, oryginalny `build.ps1` i 112 PNG. OSP kontaktuje się radiowo.
+- Pełny ZIP 0.7.9.6: **420 plików**, tylko aktualne `Tests/verify_0796.py`, `AUDYT-0.7.9.6.md`, README, CHANGELOG, CIEKAWOSTKI, ROADMAP, ZASADY-WYDAN, wyniki/testy odbiorcze i aktualny wbudowany słownik. **495/495 statycznych PASS** przed pakowaniem oraz po niezależnym rozpakowaniu, CRC i SHA-256 wszystkich plików PASS.
+- **WPF/.NET 10 nie kompilowano w środowisku przygotowania źródeł**; odbiór na Windows wymaga `build.ps1`, przy zoomie 10,20,40,70,300 m i zalaniu przed/po faktycznym odpompowywaniu.
+- **0.8.0 nadal planem**: rozprzestrzenianie pożaru na sąsiednie realne budynki OSM, model deterministyczny z kompatybilnym save/load. Bez fikcyjnego sprzętu ani automatycznej migracji.
 
 ## Wydanie SKKP 0.7.9.5 — „Wozy czytelne z bliska”
 
