@@ -1,8 +1,21 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.8.1 „Porządki na karcie zdarzenia”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.8.1.1 „Polerka operacyjna”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.8.1.1 — „Polerka operacyjna”
+
+- **Najnowsze pełne źródła: SKKP Professional 0.8.1.1** na bazie pełnej wersji 0.8.1, oznaczone jako wydanie konserwacyjne zamiast 0.8.2; wymagane nieco wolniejsze wersjonowanie.
+- **Większe pojazdy na zoomie 70–300 m**: dodatkowy mnożnik 1.05 przy 70 m, 1.20 przy 160 m, 1.35 przy 300 m z płynną interpolacją. Przy 10–40 m bez zmian. Rozmiar wizualny może być większy od drogi przy dalekim zoomie dla czytelności. Grupowanie ikon dopiero przy >=235 m i minimum 7 pojazdów, by nie zasłaniać indywidualnych sprite'ów. Nie zmieniać współrzędnych pojazdów i parkowania wzdłuż OSM.
+- **Karta zdarzenia**: istniejące (bez duplikatów i bez zmieniania handlerów) przyciski `Dysponuj`, `Mapa`, `Meldunek` bezpośrednio pod numerem i nazwą; `Zamknij` osobno po prawej. Zachować nawigację 6 grup i 11 podwidoków z 0.8.1, PPM i dwuklik na zastępach, zdjęcia i paski zasobów. Wymagany odbiór przy DPI 100/125/150%.
+- **Pulpit „Wymaga uwagi”**: tylko faktyczne sytuacje z istniejącego stanu gry (przybyłe siły bez KDR, ponowne rozpoznanie, ekspozycja/ogień sąsiadów, niska woda przy aktywnej linii). Przyciski przechodzą do odpowiedniej istniejącej zakładki. Nie generować nowych alertów, meldunków i nie zapisywać UI jako stanu symulacji.
+- **Strefy 2D**: przełącznik pokazujący/ukrywający rzeczywiste pożary i sąsiednie budynki oraz poglądowe obwiednie obrony, gazu/energii tylko przy aktualnym zagrożeniu. Ukrywanie warstwy nie wyłącza mechaniki ryzyka. Obszary są graficznym uproszczeniem, nie wiarygodną mapą prognozy dymu lub skażenia.
+- **Służby współdziałające**: samochody Policji, ZRM i technicznych stoją na odcinkach lokalnych, przejezdnych dróg OSM w poglądowych, rozdzielonych pozycjach; przy braku danych fallback. Zawsze wyłącznie po faktycznym `ArrivedAt`/fizycznym przyjeździe, bez fikcyjnych pojazdów dla zdalnych SKKW/PKP PLK i bez twierdzenia o realnych danych GPS.
+- **Polska makieta**: subtelne wzory łat asfaltu, kostki i betonowych placów, kolejne barwy dachów z wykorzystaniem istniejących geometrii offline i zamrożonych pędzli; brak wymyślonych ulic, podjazdów i obiektów. Style przy nieoznaczonych OSM obiektach ilustracyjne.
+- **Silnik pozostaje niezmieniony**: `Core/`, `Models.cs`, `Assets/` (w tym OSM/SQLite i wszystkie grafiki floty/służb), `build.ps1` bajtowo identyczne z 0.8.1. Żadnej zmiany KDR, łączności OSP, wydajności pomp, modelu pożaru, game.db, zapisu gry.
+- **Pełna paczka 0.8.1.1**: 445 plików, wyłącznie `Tests/verify_0811.py`, `AUDYT-0.8.1.1.md`, zaktualizowany `Windows/FireGlossaryWindow.cs`, aktualne CHANGELOG, CIEKAWOSTKI, README, ROADMAP, ZASADY-WYDAN, WYNIKI-TESTOW, TESTY-ODBIORCZE, DIALOGI-TELEFONICZNE-0.8.1.1. **708/708 kontroli statycznych PASS** przed spakowaniem i ponownie po osobnym rozpakowaniu ZIP; CRC i 445/445 SHA-256 PASS. **Nie wykonano kompilacji .NET 10/WPF** (brak SDK); wymagany odbiór Windows `build.ps1`.
+- Przyszłą **0.8.2** zachować na większą iterację, nie traktować tego wydania jako 0.8.2.
 
 ## Wydanie SKKP 0.8.1 — „Porządki na karcie zdarzenia”
 
