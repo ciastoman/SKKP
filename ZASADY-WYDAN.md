@@ -1,8 +1,19 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.7 „Służby z lotu ptaka”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.8.0 „Polski teren i ekspozycja pożaru”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.8.0 — „Polski teren i ekspozycja pożaru”
+
+- **Aktualna pełna baza to 0.8.0**, zbudowana na 0.7.9.7 z zachowaniem wszystkich grafik PSP, OSP, Policji, ZRM i służb pomocniczych, 29 remiz, 65 pojazdów, 63 zdjęć, 112 PNG floty, 16 PNG współdziałania, poprzedniej łączności i hydrauliki.
+- **Kartografia „Polski teren”**: indeks offline SQLite dodaje tabelę `feature_style` z prawdziwymi tagami `surface=*`, `roof:material`, `roof:shape`, `roof:colour`; 13 820 dróg i 324 budynki z dodatkowymi danymi. Wszystkie 111 749 oryginalnych geometrii, lokalne adresy i indeksy zachowane. `Tools/enrich_tactical_materials080.py` odtwarza metadane bez nowego pobierania Overpass. Starszy SQLite bez tabeli nadal czytelny.
+- **Tekstury**: polskie rodziny asfalt/kostka/beton/szuter/grunt oraz domy/PRL/bloki/hale/zabudowania gospodarcze; **brak tagu to tylko poglądowy, deterministyczny styl**, nigdy deklaracja prawdziwej nawierzchni ani parametr palności.
+- **Rzeczywiste sąsiedztwo budynków 0.8.0**: tylko dla NOWYCH pożarów budynku, po rozpoznaniu i przy wiarygodnie dopasowanym źródłowym obrysie OSM (<=18 m). Maks. 6 sąsiadów w odległości <=40 m między krawędziami rzeczywistych geometrii. Każdy ma zapisywany stan Heat/Ignited w istniejącym JSON Incydentu, brak migracji tabel `game.db`. Skuteczne roty obronne i natarcie hamują przyrost; etap zapalenia nadaje alert, zwiększa nakład pracy jednorazowo i wymaga ponownego rozpoznania. Zero fikcyjnych nowych zdarzeń/poszkodowanych.
+- **Mapa 2D**: żółty obrys zagrożonego istniejącego budynku, czerwony po objęciu ogniem, licznik zagrożonych i objętych. Daleki zoom 70–300 m: czytelniejsze pojazdy (LOD minimum 11 DIP przy 300m), mniejsze znaczniki rot; 10–40 m zachowane. Fallback wariantu A dla pojazdów bez PNG, indywidualne parkowanie OSM, hover bez migotania.
+- **Tylko aktualny pełny build**: 444 pliki, `Tests/verify_080.py`, jeden `AUDYT-0.8.0.md`, aktualny FireGlossary, CHANGELOG, CIEKAWOSTKI, ROADMAP, TESTY-ODBIORCZE, WYNIKI-TESTOW. **566/566 statycznych PASS** przed ZIP i ponownie po niezależnym rozpakowaniu; CRC i wszystkie SHA-256 PASS.
+- **Kompilacja WPF/.NET 10 NIE wykonana** — brak SDK w środowisku; odbiór runtime na Windows: wyłącznie `build.ps1` (bez BUILD-WINDOWS.ps1), test pożaru zwartej zabudowy, save/load i FPS 10–300 m.
+- **0.8.1**: strefy i służby; **0.8.2**: bogatsza polska makieta i optymalizacja WPF. **0.7.6** „Dyżurka pod obciążeniem” nadal osobnym, nieukończonym etapem.
 
 ## Wydanie SKKP 0.7.9.7 — „Służby z lotu ptaka”
 
