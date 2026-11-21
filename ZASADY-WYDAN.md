@@ -6,6 +6,15 @@
 
 ## Wymagania na najbliższe wydanie po 0.7.8 — 2D i rozmowy telefoniczne
 
+### Korekta: OSP komunikuje się przez radio (21.11.2026)
+
+- **Jednostki OSP komunikują się z SKKP przez RADIO**, a nie przez telefon służbowy. Dotyczy to m.in. braku możliwości wyjazdu, potwierdzenia wyjazdu, dojazdu, meldunków z miejsca działań i powrotów. Meldunki muszą być zwięzłe, naturalne i osadzone w istniejącej logice radiowej.
+- Z planowanej biblioteki **dialogów telefonicznych 0.7.9** usunąć scenariusz „OSP — brak możliwości wyjazdu” i wszelkie automatyczne telefoniczne powiadomienia OSP; przenieść odpowiednie wypowiedzi do **katalogu kwestii radiowych OSP**.
+- Telefon służbowy pozostaje do kontaktów z CPR i służbami/partnerami zewnętrznymi (np. dyspozytornia ZRM, Policja, pogotowie energetyczne, wsparcie spoza powiatu) zależnie od faktycznego workflow w grze. Nie podwajać tą drogą meldunków OSP.
+- Przykładowy meldunek radiowy: **„998 Chrzanów, OSP [nazwa]. Nie zbierzemy obsady, nie wyjedziemy.”** Odpowiedź dyżurnego: **„Przyjąłem, OSP [nazwa].”** Uwaga: kwestie są propozycją do korekty przed implementacją; status braku wyjazdu musi być zgodny z silnikiem.
+
+
+
 Ustalenia użytkownika z 21.11.2026 — **do wdrożenia w najbliższym pełnym wydaniu** (roboczo 0.7.9), niezależnie od szerszego planu „Żywe zdarzenia”:
 
 1. **Pompiarz na 2D stoi przy swoim wozie**, nie wyraźnie odsunięty od samochodu. W 0.7.8 `Windows/TacticalMapPanel070.cs` rysuje istniejącego operatora jako `driver:` z offsetem `vp.X-WorldPixels074(35), vp.Y+WorldPixels074(4)`; zmniejszyć go, dopasować do aktualnego znaku pojazdu i skali 40/80/160/300 m, unikać nakładania. Operator pozostaje **tym samym członkiem obsady**, bez tworzenia fikcyjnego człowieka. Pompiarz tylko przy istniejącej aktywnej pracy pompy, nie przy dowolnym GBA.
