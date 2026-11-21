@@ -1,8 +1,17 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.4 „Wozy na stanowiskach”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.7.9.5 „Wozy czytelne z bliska”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.7.9.5 — „Wozy czytelne z bliska”
+
+- **Najnowsza pełna baza źródłowa 0.7.9.5** na podstawie 0.7.9.4; naprawa „Micro Machines” na podglądzie 2D przy zoomie 10 m. Nie wracać do zbyt agresywnego limitu 25 DIP + 84% + transparentnego paddingu.
+- **Wspólna geometria drogi i auta:** płynny cap wizualnej szerokości drogi 36 DIP przy 10 m, maleje do poprzednich 25 DIP przy 40 m. Sprite zajmuje do 92% tej szerokości, max 36 DIP, bez wymuszonego dużego minimum przy 300 m.
+- **112 sprite PNG** w ByVehicle (65), Sprites (24), Fallback (23) przycięto wyłącznie do zawartości alfa (+2 px obramowania). Proporcje wynikają z faktycznego PNG po przycięciu, a nie ze stałego 2:1. W manifest.json są 112 kontrolnych SHA-256 oryginalnej zawartości alfa.
+- Zachować indywidualne parkowanie każdego auta na lokalnej drodze OSM, stabilne pozycje, kolory PSP/OSP, popup i duży hitbox nawet przy drobnej ikonie. Nie zmieniać hydrauliki, KDR, Models.cs, Core/SimulationHost.cs, game.db i baz OSM.
+- Pełna paczka: 420 plików, bieżące Tests/verify_0795.py i AUDYT-0.7.9.5.md, aktualny słownik, CHANGELOG, CIEKAWOSTKI, ROADMAP, TESTY-ODBIORCZE i WYNIKI-TESTOW. **475/475 statyczne PASS**, ponownie po niezależnym rozpakowaniu, CRC i SHA-256 PASS. **Nie wykonano kompilacji .NET/WPF** — Windows `build.ps1` i wizualny odbiór nadal konieczne.
+- 0.8.0: rozwój pożarów na sąsiednie rzeczywiste budynki OSM pozostaje osobnym planem.
 
 ## Wydanie SKKP 0.7.9.4 — „Wozy na stanowiskach”
 
