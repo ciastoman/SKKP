@@ -1,8 +1,19 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.8.0 „Polski teren i ekspozycja pożaru”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.8.1 „Porządki na karcie zdarzenia”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.8.1 — „Porządki na karcie zdarzenia”
+
+- Najnowsza pełna baza źródeł SKKP Professional **0.8.1**, zbudowana na 0.8.0. Wydanie dotyczy **wyłącznie GUI karty zdarzenia**; nie cofaj pożarów sąsiadujących budynków, polskich tekstur, radia OSP i poprawek Codexa.
+- **6 grup nawigacji WPF** (z zachowaniem instancji istniejących paneli i ich stałych Tag): Pulpit = Summary/Modifiers; Taktyka = Tactical/Command; Siły = Assigned/Rotas; Działania = Water/Hoses; Łączność = Live (wewnątrz Communications/Cooperation); Dokumentacja = Report/Logistics. Zewnętrzne przejścia z dashboardu, priorytetów, KDR, mapy, wody i łączności kierować po Tag poprzez `NavigateRole081`, nigdy po indeksie.
+- **Pasek statusu**: liczba pojazdów przydzielonych/na miejscu oraz w drodze lub alarmowaniu; KDR tylko przy faktycznym statusie `Na miejscu`; licznik sąsiadujących zagrożonych/objętych ogniem obiektów wyłącznie z `BuildingSpreadTargets080` przy `BuildingSpreadEnabled080`. Bez nowego alarmu/zdarzenia, bez wpisu do save, tekst podmieniany wyłącznie po zmianie.
+- **Warunkowe Działania**: grupa Water/Hoses ukryta, jeśli `IncidentResponseEvaluator.NeedsWaterSuppression` zwraca false. Po zmianie zdarzenia ukryta aktywna podzakładka nie może pozostać na ekranie; przełącz na Summary. Wróć do wody w scenariuszu gaśniczym.
+- **Ergonomia**: główne przyciski min. 36 DIP, padding 13×7, Zamknij oddzielone. Karty pojazdów większa typografia i odstępy; zdjęcia 120×120 zachowane, paski wody/piany tylko dla zbiorników o dodatniej pojemności; dwuklik i PPM bez zmian; 2 kolumny przy szerokości listy >=790 DIP, 1 przy mniejszej.
+- **Nie zmieniono** `Core/`, `Models.cs`, `Assets/` (całe offline OSM i wszystkie oryginalne 112 sprite'ów PSP/OSP, 16 służb współdziałających), `build.ps1`, KDR, hydrauliki, symulacji, `game.db`; pełny ZIP 444 pliki.
+- Bieżący pełny ZIP: aktualny README, CHANGELOG, CIEKAWOSTKI, ROADMAP, `ZASADY-WYDAN.md`, `TESTY-ODBIORCZE.md`, `WYNIKI-TESTOW.md`, jeden `AUDYT-0.8.1.md`, jeden `Tests/verify_081.py`, aktualny `FireGlossaryWindow.cs`. **614/614 kontroli statycznych PASS** przed ZIP i po niezależnym rozpakowaniu; CRC i wszystkie SHA-256 PASS. **Nie wykonano kompilacji .NET 10 / WPF** — test na Windows z dotychczasowym `build.ps1` jest niezbędny.
+- **0.8.2 planowane**: strefy zagrożeń, bardziej realistyczne rozmieszczenie faktycznie przybyłych służb i „Polska makieta”, cache i opcjonalny panel „Wymaga uwagi”. Nie przedstawiać tego jako obecnego w 0.8.1.
 
 ## Wydanie SKKP 0.8.0 — „Polski teren i ekspozycja pożaru”
 
