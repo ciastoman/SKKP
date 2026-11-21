@@ -4,6 +4,16 @@
 > Ostatnia przygotowana pełna wersja źródeł: **0.7.8 „Rozwinięcie bojowe”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
 
+## Wymagania na najbliższe wydanie po 0.7.8 — 2D i rozmowy telefoniczne
+
+Ustalenia użytkownika z 21.11.2026 — **do wdrożenia w najbliższym pełnym wydaniu** (roboczo 0.7.9), niezależnie od szerszego planu „Żywe zdarzenia”:
+
+1. **Pompiarz na 2D stoi przy swoim wozie**, nie wyraźnie odsunięty od samochodu. W 0.7.8 `Windows/TacticalMapPanel070.cs` rysuje istniejącego operatora jako `driver:` z offsetem `vp.X-WorldPixels074(35), vp.Y+WorldPixels074(4)`; zmniejszyć go, dopasować do aktualnego znaku pojazdu i skali 40/80/160/300 m, unikać nakładania. Operator pozostaje **tym samym członkiem obsady**, bez tworzenia fikcyjnego człowieka. Pompiarz tylko przy istniejącej aktywnej pracy pompy, nie przy dowolnym GBA.
+2. **Skrypty:** podstawowym i jedynym skryptem wydania ma być istniejący **`build.ps1`**; usunąć dodatkowy **`BUILD-WINDOWS.ps1`** w następnej pełnej paczce, nie dodawać zastępczego. Sprawdzono zawartość w 0.7.8: `build.ps1` wywołuje `dotnet publish SKKP.Professional.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish`, kontroluje kod wyjścia. Skrypt jest zgodny na poziomie przeglądu źródeł; **rzeczywistego uruchomienia na Windows/.NET nie potwierdzono**, więc konieczny odbiór.
+3. **Legenda 2D domyślnie ukryta pod przyciskiem „i”**, wygląd, położenie i zachowanie jak przycisk legendy na głównej mapie `Assets/map.html` (`#legendToggle`, prawy górny róg, ikona `i`, rozwijany panel). Obecnie legenda 2D jest tooltipem na całej ramce mapy w `Windows/TacticalMapPanel070.cs`; zastąpić obsługą kliknięcia i zamykania (ponowne kliknięcie, Esc/kliknięcie poza), przy poprawnej obsłudze klawiatury oraz układu na 125–150% DPI.
+4. **Telefon bardziej ludzki, zwięzły, zależny od sytuacji.** W 0.7.8 `Core/PhoneDialogue0627.cs` generuje ogólne `Outbound`, `Response`, `Openers`, `Confirmations`; `Core/PhoneQuickReplies0629HF1.cs` oferuje sztywne opcje. Przygotować i zatwierdzić z użytkownikiem scenariusze, a potem wdrożyć **małe, sytuacyjne zestawy wypowiedzi**: CPR i dopytanie, brak wyjazdu OSP, skierowanie ZRM/Policji/pogotowia, zewnętrzny sprzęt specjalistyczny (np. faktyczny `DAB_ROTATOR` w `Core/ExternalSupport0622.cs`), brak dostępności/oddzwonienie, potwierdzenie wyjazdu/dojazdu. Skracać naturalnie, bez `#ID`, bez „potrzebujemy wsparcia rotator, proszę o dysponowanie rotator”. **Nie tworzyć faktów ani statusów:** powiadomienie ≠ przyjęcie ≠ wyjazd ≠ dojazd. Teksty do zatwierdzenia to propozycje, nie gotowy kodeks produkcyjny.
+5. Przy następnym wydaniu: **pełny ZIP**, aktualizacja `Windows/FireGlossaryWindow.cs`, tylko najnowsze testy i audyt, CHANGELOG, CIEKAWOSTKI, ROADMAP; regresja OSM, obsady, radia i hydrauliki.
+
 ## Ustalenia SKKP 0.7.8 — „Rozwinięcie bojowe”
 
 - **Aktualna baza źródeł: pełna paczka 0.7.8**, zbudowana na 0.7.7 „Strażacy w terenie” (wcześniej 0.7.5.1 od Codexa). Nie mieszać kodu ze starszym 0.7.4.1 i nie uznawać 0.7.6 za wdrożone.
