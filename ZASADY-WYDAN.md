@@ -1,8 +1,18 @@
 # SKKP Professional 0.7.2.1 — zasady wydań, rozwoju i utrzymania
 
 > **Dokument referencyjny projektu — stan na 19 listopada 2026 r.**  
-> Ostatnia przygotowana pełna wersja źródeł: **0.8.1.3 „Szlif łączności i czytelności”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
+> Ostatnia przygotowana pełna wersja źródeł: **0.8.1.4 „Wozy rosną, mapa oddycha”**. Kontrole statyczne zaliczone; kompilacja WPF tej wersji na Windows pozostaje do odbioru.  
 > Ten dokument utrwala ustalenia projektu między kolejnymi rozmowami ChatGPT. W przyszłych wydaniach aktualizuj go, gdy zmieni się któraś reguła. Ustalenia użytkownika z późniejszą datą mają pierwszeństwo.
+
+## Wydanie SKKP 0.8.1.4 — „Wozy rosną, mapa oddycha”
+
+- **Najnowsza pełna baza źródeł: 0.8.1.4** na podstawie 0.8.1.3 (które uwzględnia poprawki Codexa 0.8.1.2). Wydanie jest małym szlifem, nie 0.8.2.
+- **Mapa taktyczna:** usunięto wyłącznie dwa przyciski `+` i `−` oraz liczbowy odczyt promienia typu `160 m` z górnego paska. Zostają tytuł, informacje, przełącznik stref, legenda, rolka 10–300 m, przeciąganie, hover, wszystkie inne funkcje; zoom wokół kursora i debounce pozostają.
+- **Wozy PSP/OSP i służby przybyłe fizycznie:** nowa bezskokowa krzywa wizualnej wielkości PNG, fallback i pomocniczych sprite'ów. Przy oddaleniu do 45 m zachowana dotychczasowa wielkość z 0.8.1.3. Od 45 do 300 m krótszy wymiar na ekranie rośnie wg `smoothstep(t)=t²(3−2t)` z `t=Clamp((zoom-45)/255,0,1)`, osiąga **160% wielkości referencyjnej przy 45 m** na poziomie 300 m. NIE mnożyć już malejącej szerokości jezdni przez kolejny współczynnik, bo sylwetka nie rośnie. Rzeczywista geometria, położenie, heading, stan i czas dojazdu bez zmian; na dalekim zoomie ikonki celowo większe od drogi.
+- **Wszystkie 65 bazowych pojazdów mają PNG**, zachowane są 16 ikon służb; żadne fotografie, PNG, SQLite, geometrie OSM ani oryginalny `build.ps1` nie zmienione. `Core/`, `Models.cs`, CPR, łączność, hydraulika, KDR i pożary sąsiadów bajtowo zachowane z 0.8.1.3.
+- **Wraki i motocykle:** w pełnej paczce jest wyłącznie plan `ASSETY-ZDARZEN-PLAN-0.8.1.4.md`, NIE nowe bitmapy. Przyszłe assety realistycznych rozbitych aut, motocykli, autobusów i ciężarówek mają być przezroczystymi PNG z widoku dokładnie z góry, przypisanymi deterministycznie do istniejącego typu zdarzenia i faktycznie rozpoznanego stanu. Grafika dekoracyjna nie może sama potwierdzać stanu rannych, zablokowanej drogi czy zagrożenia.
+- **Pełna paczka 0.8.1.4**: 445 plików; aktualny FireGlossary, tylko `Tests/verify_0814.py`, jeden `AUDYT-0.8.1.4.md`, CHANGELOG, CIEKAWOSTKI, ROADMAP, ZASADY-WYDAN, TESTY-ODBIORCZE, WYNIKI-TESTOW i aktualne dialogi. **875/875 kontroli statycznych PASS** przed archiwum i po niezależnym rozpakowaniu; CRC i 445/445 SHA-256 PASS. **Nie kompilowano .NET 10/WPF** — brak SDK Windows, odbiór `.\build.ps1` i kontrola wizualna 10, 40, 45, 70, 160, 300 m na Windows obowiązkowa.
+- **0.8.2 pozostaje większą przyszłą wersją**, drobne iteracje kontynuować w 0.8.1.x.
 
 ## Wydanie SKKP 0.8.1.3 — „Szlif łączności i czytelności”
 
