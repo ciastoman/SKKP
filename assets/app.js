@@ -22,7 +22,7 @@
     downloadLink.rel = 'noopener noreferrer';
     downloadLink.hidden = false;
     if (placeholder) placeholder.hidden = true;
-    if (hint) hint.textContent = 'Pobieranie otworzy oficjalną stronę publicznego wydania w nowej karcie.';
+    if (hint) hint.textContent = 'Pobieranie ZIP z najnowszego wydania GitHub. Wymagane zalogowanie i dostęp do repozytorium gry; jeżeli paczka nie jest jeszcze dostępna, sprawdź status wydania.';
   }
 
   const navToggle = $('.nav-toggle');
